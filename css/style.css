@@ -270,7 +270,7 @@ table {
 .check[type="checkbox"]:checked:after{   
     height:15px;
     width:15px;
-    background-image:  url('../images/Coff.png');
+    background-image:  url('../images/coff.png');
     background-size: 13px 13px;
     background-color: #FFF3B2; 
     background-repeat: no-repeat;
