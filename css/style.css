@@ -250,12 +250,12 @@ table {
     height: 11px;
     border: 1px solid transparent;
     content: "";
-    background:  #FFF3B2;
+    background: transparent;
 } 
 
 .check[type="checkbox"]:after{
     position: relative;
-    background-color: transparent; 
+    background-color: #FFF3B2; 
     background-size: 13px 13px;
     top:-12px;
     left:-70%;
