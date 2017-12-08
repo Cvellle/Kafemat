@@ -272,9 +272,11 @@ table {
     width:15px;
     background-image:  url('../images/coff.png');
     background-size: 13px 13px;
-    background-color: #FFF3B2; 
+    content:"";
+    background-color: #fff3b2; 
     background-repeat: no-repeat;
     background-position: center;
+    border:2px solid black;
 }
 
 .tokens {
