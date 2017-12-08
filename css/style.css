@@ -314,3 +314,10 @@ table {
   transform:translateY(1%);
 }
 
+.descr {
+	position:absolute;
+	text-align:center;
+	bottom:10%;
+	font-weight:600;
+	font-size:1.7rem;
+}
