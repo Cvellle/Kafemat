@@ -1,4 +1,3 @@
-<script>
 
 const coins = document.querySelectorAll('.coin');
 const mach = document.querySelector('.machine');
@@ -99,4 +98,4 @@ function f () {
   
 }
 
-</script>
+
