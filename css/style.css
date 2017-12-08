@@ -250,13 +250,12 @@ table {
     height: 11px;
     border: 1px solid transparent;
     content: "";
-    background: #fff3b2;
+    background:  #FFF3B2;
 } 
 
 .check[type="checkbox"]:after{
     position: relative;
-    background-color:  #fff3b2; 
-    background-image:  url('../images/coff.png');
+    background-color: transparent; 
     background-size: 13px 13px;
     top:-12px;
     left:-70%;
@@ -272,7 +271,7 @@ table {
     width:15px;
     background-image:  url('../images/coff.png');
     background-size: 13px 13px;
-    background-color: #fff3b2; 
+    background-color: #FFF3B2; 
     background-repeat: no-repeat;
     background-position: center;
 }
