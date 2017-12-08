@@ -249,13 +249,13 @@ table {
     width: 11px;
     height: 11px;
     border: 1px solid transparent;
-    content:"";
-    background:  #cd853f;
+    content: "";
+    background: #fff3b2;
 } 
 
 .check[type="checkbox"]:after{
     position: relative;
-    background-color: transparent; 
+    background-color:  #fff3b2; 
     background-image:  url('../images/coff.png');
     background-size: 13px 13px;
     top:-12px;
@@ -265,7 +265,6 @@ table {
     height: 100%;
     border-radius:50%;
     content:"";
-    border:2px solid black;
 }
 
 .check[type="checkbox"]:checked:after{   
@@ -273,7 +272,6 @@ table {
     width:15px;
     background-image:  url('../images/coff.png');
     background-size: 13px 13px;
-    content:"";
     background-color: #fff3b2; 
     background-repeat: no-repeat;
     background-position: center;
@@ -316,10 +314,3 @@ table {
   transform:translateY(1%);
 }
 
-.descr {
-	position:absolute;
-	text-align:center;
-	bottom:10%;
-	font-weight:600;
-	font-size:1.7rem;
-}
