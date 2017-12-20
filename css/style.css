@@ -59,6 +59,10 @@
   display: inline-flex; 
 }
 
+.coin:hover {
+  filter:brightness(1.07);
+}
+
 .coin1 {
   height: 3rem;
   width: 3rem;
@@ -317,7 +321,7 @@ table {
 .descr {
   position:absolute; 
   text-align:center; 
-  bottom:10%; 
+  top:80%; 
   font-weight:600; 
   font-size:1.7rem;
 }
