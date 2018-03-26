@@ -23,9 +23,9 @@ var pos = -5;
 var id = setInterval(fall, 1000/1000);
 function fall() {
 
-    if (pos == 30) {
+    if (pos == 50) {
       clearInterval(id);
-      cf.style.top = "-10%"; 
+      cf.style.top = "-15%"; 
 
     } else {
       pos+=0.5; 
