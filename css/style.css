@@ -7,10 +7,14 @@
   align-items: center;
   display: -webkit-flex;
   justify-content: space-around;
+<<<<<<< HEAD
    /* Safari /
 -webkit-justify-content: space-around; / Safari 6.1+ */
 /* display: flex; */
 
+=======
+  align-items: center;
+>>>>>>> d0b907d09dc664687240778abed9da0ee33e81d7
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
   z-index:;
     }
