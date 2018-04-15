@@ -22,87 +22,101 @@
 	
 <body>
 	  
-  <div class="coinsdiv">
+
+  <div class="all">
+
+      <div class="coinsdiv">
   
-   <div id="cf" class ="coin coin2 fall" value = "10" data-mon="5.0">
-     <div id="cf1" class="dec2 coin" data-mon="5.0" value = "10">$</div>
-   </div> 
-   <div id = "c1" class = "coin coin1" value = "5" data-mon="5.0">
-     <div class="dec1 coin" data-mon="5.0">5</div>
-   </div> 
-   <div id = "c2" class = "coin coin2" value = "10" data-mon="10.0">
-     <div class="dec2 coin" data-mon="10.0">10</div>
-   </div>
-   <div id = "c3" class = "coin coin3" value = "20" data-mon="20.0">
-     <div class="dec3 coin" data-mon="20.0">20</div> 
-   </div>
-	  
- </div>
-  
- <div class="machine">
-  
- <div class="displaydiv">  
-   <div class="block">
-     <div class="cost descr1">0.00</div>
-     <div class="descr1">Cost</div>
-     <button class="reset" onclick="reset()">Reset</button>
-   </div>
-   <div class="block">
-     <div class="budget descr2">0.00</div>
-     <div class="descr2">Budget</div>
-     <button class="reset" onclick="reset2()">Reset</button>
-   </div>
- <div/>
- <img class="backgr" src="images/coffee.jpg">    
- <table class="table">
-    <tr class="listnames">
-      <td>Coffee</td>
-      <td>Price</td>
-    </tr>
-    <tr>
-      <td class="">
-        <form class="lif">
-          <ul>
-            <li><input class="check" type="checkbox" name="c" data-price="32,30" value="Espresso">Espresso<li>
-            <li><input class="check" type="checkbox" name="c" data-price="30,34" value="Ness">Ness<li>
-            <li><input class="check" type="checkbox" name="c" data-price="30,30" value="Capuccino">Capuccino<li>
-            <li><input class="check" type="checkbox" name="c" data-price="32,34" value="Ness">Amaretto<li>
-            <li><input class="check" type="checkbox" name="c" data-price="32,00" value="Ness">Mocca<li>
-          </ul>
-         </form>    
-       </td>
-       <td class="">
-          <ul>
-            <li>32,30 RSD</li>
-            <li>30,34 RSD</li>
-            <li>30,30 RSD</li>
-            <li>32,34 RSD</li>
-            <li>32,00 RSD</li>
-          </ul>
-       </td>
-    </tr>
-  </table>
-   
-  <button class="add inl" type='button' onclick="f()">>></button>    
-  <img class="inl" style="height:13px; width:23px;" src="images/chart.png"/>
-   <div class="buydiv">
-    <button id="myBtn" class="buy" disabled>Buy</button>
-  <div/>      
+          <div id="cf" class ="coin coin2 fall" value = "10" data-mon="5.0">
+            <div id="cf1" class="dec2 coin" data-mon="5.0" value = "10">$</div>
+          </div> 
+          <div id = "c1" class = "coin coin1" value = "5" data-mon="5.0">
+            <div class="dec1 coin" data-mon="5.0">5</div>
+          </div> 
+          <div id = "c2" class = "coin coin2" value = "10" data-mon="10.0">
+            <div class="dec2 coin" data-mon="10.0">10</div>
+          </div>
+          <div id = "c3" class = "coin coin3" value = "20" data-mon="20.0">
+            <div class="dec3 coin" data-mon="20.0">20</div> 
+          </div>
+        
+       </div>
+
+      <div class="machine">
+
+        <div class="displaydiv"> 
+
+          <div class="block">
+            <div class="cost descr1">0.00</div>
+            <div class="descr1">Cost</div>
+            <button class="reset" onclick="reset()">Reset</button>
+          </div>
+
+          <div class="block">
+            <div class="budget descr2">0.00</div>
+            <div class="descr2">Budget</div>
+            <button class="reset" onclick="reset2()">Reset</button>
+          </div>
+
+        </div>
+
+        <table class="table">
+          <tr class="listnames">
+            <td>Coffee</td>
+            <td>Price</td>
+          </tr>
+          <tr>
+            <td class="">
+              <form class="lif">
+                <ul>
+                  <li><input class="check" type="checkbox" name="c" data-price="32,30" value="Espresso">Espresso<li>
+                  <li><input class="check" type="checkbox" name="c" data-price="30,34" value="Ness">Ness<li>
+                  <li><input class="check" type="checkbox" name="c" data-price="30,30" value="Capuccino">Capuccino<li>
+                  <li><input class="check" type="checkbox" name="c" data-price="32,34" value="Ness">Amaretto<li>
+                  <li><input class="check" type="checkbox" name="c" data-price="32,00" value="Ness">Mocca<li>
+                </ul>
+              </form>    
+            </td>
+            <td class="">
+                <ul>
+                  <li>32,30 RSD</li>
+                  <li>30,34 RSD</li>
+                  <li>30,30 RSD</li>
+                  <li>32,34 RSD</li>
+                  <li>32,00 RSD</li>
+                </ul>
+            </td>
+          </tr>
+        </table>
     
-<!--  <div>Tokens</div>
-  <div class="tokens">0.00</div> -->  
-  <div class="carddiv">
-    <div class="cardinl card">1000.00</div> 
-    <div class="cardinl">Card Money</div>
-  </div> 
- </div>
+        <button class="add inl" type='button' onclick="f()">>></button>    
+        <img class="inl" style="height:13px; width:23px;" src="images/chart.png"/>
+
+        <div class="buydiv">
+          <button id="myBtn" class="buy" disabled>Buy</button>
+        </div>      
+      
+    <!--  <div>Tokens</div>
+    <div class="tokens">0.00</div> -->  
+
+        <div class="carddiv">
+          <div class="cardinl card">1000.00</div> 
+          <div class="cardinl">Card Money</div>
+        </div>
+    
+        <p class="descr">Select your coffees</p>
+
+</div>
  
- <p class="descr">Select your coffees</p>
+ <!-- <p class="descr">Select your coffees</p> -->
  
   <!--<div id = "cf" class ="coin coin1 fall" value = "5" data-mon="5.0">
      <div class="dec1 coin" data-mon="5.0">5</div>
    </div> -->
 
+</div>
+
+<img class="backgr" src="images/coffee.jpg"> 
 
 <script src="js/script.js"></script> 
 	 

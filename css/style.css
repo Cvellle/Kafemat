@@ -2,9 +2,15 @@
   background-color: rgb(178, 70, 16);
   background-size: cover;
   min-height: 100vh;
-  display: inline-flex;
-  justify-content: center;
+  /* display: inline-flex; */
+  /* justify-content: center;*/
   align-items: center;
+  display: -webkit-flex;
+  justify-content: space-around;
+   /* Safari /
+-webkit-justify-content: space-around; / Safari 6.1+ */
+/* display: flex; */
+
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
   z-index:;
     }
@@ -29,7 +35,7 @@
 }
 
 #cf {
-  top:-35%;
+  top:-30%;
   position:absolute;
   left:49.5%;
   transform:translateX(-50%);
@@ -321,20 +327,51 @@ table {
 .descr {
   position:absolute; 
   text-align:center; 
-  top:80%;
+  bottom:-20%;
   font-weight:600; 
   font-size:1.7rem;
 }
 
 @media only screen and (min-width: 115px) and (max-width: 1024px) {
 
-    /* transform:scale(1,0.95); */
+  .machine {
+      position: absolute;
+      left:50%;
+      top:55%;
+      transform: translateX(-50%) translateY(-50%);
+      height:71%;
+      max-height: 350px;
+    }
 
+   .buydiv {
+      position: absolute;
+      left:2%;
+      bottom:1%;
+    }
 
-    .descr {
-      top:92%;
-      font-size:1rem;
+    .carddiv {
+      position: absolute;
+      right:3%;
+      bottom:2%;
+    }
+
+  .descr {
+      position:absolute;
+      bottom:-16%;
+      left:50%;
+      width:80%;
+      transform: translateX(-50%);
+      font-size:1.2rem;
     }
     
+    .coinsdiv {
+      position: absolute;
+      left:50%;
+      top:5%;
+      transform: translateX(-50%) translateY(0%);
+      height:71%;
+      max-height: 350px;
+      width:80%;
+    }
 
 }

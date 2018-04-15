@@ -19,16 +19,16 @@ function insert (e) {
 // cf.appendChild(inp8);
     
     //cf.style.transform="translateY(20px -20px)";
-var pos = -5;
-var id = setInterval(fall, 1000/1000);
+var pos = -30;
+var id = setInterval(fall, 1000/10000);
 function fall() {
 
-    if (pos == 50) {
+    if (pos == 60) {
       clearInterval(id);
-      cf.style.top = "-15%"; 
+      cf.style.top = "-30%"; 
 
     } else {
-      pos+=0.5; 
+      pos+=1; 
       cf.style.top = pos + '%'; 
 
     }
