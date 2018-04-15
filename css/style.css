@@ -5,6 +5,9 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
   z-index:;
     }
