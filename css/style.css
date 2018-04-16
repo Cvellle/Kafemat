@@ -273,9 +273,10 @@ table {
     display: block;
     width: 11px;
     height: 11px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     content: "";
     background:  #CD853F;
+    display: blcok;
 } 
 
 .check[type="checkbox"]:after{
