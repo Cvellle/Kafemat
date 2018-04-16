@@ -1,20 +1,15 @@
 :root {
   background-color: rgb(178, 70, 16);
   background-size: cover;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* display: inline-flex; */
   /* justify-content: center;*/
   align-items: center;
   display: -webkit-flex;
   justify-content: space-around;
-<<<<<<< HEAD
    /* Safari /
 -webkit-justify-content: space-around; / Safari 6.1+ */
 /* display: flex; */
-
-=======
-  align-items: center;
->>>>>>> d0b907d09dc664687240778abed9da0ee33e81d7
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
   z-index:;
     }
@@ -32,6 +27,11 @@
 }
 	
 .coinsdiv {
+  top:15%;
+  left:50%;
+  transform:translateX(-50%);
+  position:absolute;
+  width:100%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -119,12 +119,16 @@
 
 }
 
-.machine { 
-  height: 100%;
+.machine {
+  position: absolute;
+  height: 50%;
   width: 14rem;
   border: 5px solid black;
   background-color: #CD853F;
   border-radius:25px; 
+  top:50%;
+  left:50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
 }  
 
 .cost {
@@ -187,12 +191,18 @@
 }
 
 .add {
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top:75%;
+  left:2%;
   text-align: center;
-  display: flex;
   border: 3px solid black;
   margin: 3%;
+}
+
+.addimg {
+  position: absolute;
+  top:78%;
+  left:25%;
 }
 
 input, button {
@@ -217,8 +227,9 @@ button:disabled {
 }
 
 .buydiv {
-  display: inline-flex;
-  justify-content: center;
+  position: absolute;
+  top:85%;
+  left:2%;
   align-items: center;
   text-align: center;
 }
@@ -232,7 +243,7 @@ button:disabled {
   height: 35px;
   width: 80px;
   margin: 3%;
-  border-radius: 12%;
+  border-radius: 10px;
 }
 
 ul {
@@ -302,7 +313,11 @@ table {
 }
 
 .carddiv {
-  position:relative;
+  position: absolute;
+  right:2%;
+  top:85%;
+  height:12%;
+  width:40%;
 }
 
 .card {
@@ -313,11 +328,21 @@ table {
   width: 70px;   
   margin: 5%;
   border:3px solid;
-  border-radius: 10%;
+  border-radius: 10px;
 }
-.cardinl {
-  display: inline;
-  float: right;
+
+.cardtext {
+  position: absolute;
+  right:2%;
+  top:0%;
+}
+
+.cardamount {
+  position: absolute;
+  right:2%;
+  bottom:-10%;
+  display: flex;
+  justify-content: center;
 }
 
 .inl {
@@ -334,6 +359,9 @@ table {
   bottom:-20%;
   font-weight:600; 
   font-size:1.7rem;
+  left:50%;
+  -webkit-transform: translateX(-50%);
+  width: 120%;
 }
 
 @media only screen and (min-width: 115px) and (max-width: 1024px) {
