@@ -223,7 +223,7 @@ input, button:active {
 
 button:disabled {
   color:black;
-  opacity:0.7;
+  opacity:0.3;
 }
 
 .buydiv {
@@ -235,13 +235,16 @@ button:disabled {
 }
 
 .buy {
+  position: absolute;
+  top:83%;
+  left:2%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border: 3px solid black;
-  height: 35px;
-  width: 80px;
+  height: 10%;
+  width: 35%;
   margin: 3%;
   border-radius: 10px;
 }
@@ -266,6 +269,8 @@ table {
   align-items: center;
   display: flex;  
   padding:0px;  
+  -moz-transform: translatex(5%);
+  -webkit-transform: translatex(5%);
 }
 
 .check[type="checkbox"]:before{
@@ -281,7 +286,7 @@ table {
 
 .check[type="checkbox"]:after{
     position: relative;
-	background-color: transparent; 
+	  background-color: transparent; 
     background-image:  url('../images/coff.png');
     background-size: 13px 13px;
     top:-12px;
@@ -335,7 +340,7 @@ table {
 .cardtext {
   position: absolute;
   right:2%;
-  top:0%;
+  top:-12%;
 }
 
 .cardamount {
@@ -362,7 +367,7 @@ table {
   font-size:1.7rem;
   left:50%;
   -webkit-transform: translateX(-50%);
-  width: 120%;
+  width: 200%;
 }
 
 @media only screen and (min-width: 115px) and (max-width: 1024px) {

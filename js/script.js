@@ -74,7 +74,7 @@ const inputs = form.getElementsByTagName("input");
 const priceNodes = []; 
 const cost = document.querySelector('.cost');
 
-function f () {   
+function addprice () {   
     for (var i = 0, max = inputs.length; i < max; i += 1) {  
     if (inputs[i].type === "checkbox" && inputs[i].checked) {
       inputs[i].checked = !inputs[i].checked;
