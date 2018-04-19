@@ -132,12 +132,19 @@
 }  
 
 .cost {
+  position: absolute;
+  top:5%;
+  left:14%;
   border: 3px solid black;
-  height: 40px;
-  width: 50px;
+  height: 35px;
+  width: 60px;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  text-align: center;
   background-color:white;
   justify-content: center;
-  border-radius:10%;
+  border-radius:10px;
   transform:translateX(-20%);
 }
 
@@ -146,18 +153,20 @@
 }
 
 .descr1 {
-  display: inline-block;
-  display: flex;
+  position: absolute;
+  top:8%;
+  left:41%;
   align-items: center;
-  text-align: center;
+  text-align: left;
   width:50px;
 }
 
 .descr2 {
-  display: block;
-  display: flex;
+  position: absolute;
+  top:20%;
+  left:41%;
   align-items: center;
-  text-align: center;
+  text-align: left;
   width:50px;
 }
 
@@ -174,20 +183,38 @@
 }
 
 .budget {
-  display: flex;
+  position: absolute;
+  top:17%;
+  left:14%;
   border: 3px solid black;
-  height: 40px;
-  width: 50px;
+  height: 35px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
   justify-content: center;
-  border-radius:10%;
+  border-radius:10px;
   transform:translateX(-20%);
 }
 
 .reset {
-  background-color:;
   border: 3px solid black;
   position:relative;
   right:-5%;
+}
+
+.resetcost {
+  position: absolute;
+  top:8%;
+  left:66%;
+  border-radius:9px;
+}
+
+.resetbudg {
+  position: absolute;
+  top:20%;
+  left:66%;
+  border-radius:9px;
 }
 
 .add {
@@ -197,6 +224,7 @@
   text-align: center;
   border: 3px solid black;
   margin: 3%;
+  border-radius:9px;
 }
 
 .addimg {
@@ -269,8 +297,12 @@ table {
   align-items: center;
   display: flex;  
   padding:0px;  
-  -moz-transform: translatex(5%);
-  -webkit-transform: translatex(5%);
+  -moz-transform: translatex(5%) translatey(65%);
+  -webkit-transform: translatex(5%) translatey(65%);
+}
+
+.prices {
+  
 }
 
 .check[type="checkbox"]:before{
@@ -370,7 +402,27 @@ table {
   width: 200%;
 }
 
-@media only screen and (min-width: 115px) and (max-width: 1024px) {
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 115px) and (max-width: 320px) {
+
+  .coinsdiv {
+    position: absolute;
+    left:50%;
+    top:4%;
+    -moz-transform: translateX(-50%) translateY(0%);
+    -webkit-transform: translateX(-50%) translateY(0%);
+    height:75%;
+    max-height: 350px;
+    width:80%;
+  }
+
 
   .machine {
       position: absolute;
@@ -393,7 +445,7 @@ table {
       bottom:2%;
     }
 
-  .descr {
+    .descr {
       position:absolute;
       bottom:-16%;
       left:50%;
@@ -402,17 +454,72 @@ table {
       font-size:1.2rem;
     }
     
-    .coinsdiv {
-      position: absolute;
-      left:50%;
-      top:5%;
-      transform: translateX(-50%) translateY(0%);
-      height:71%;
-      max-height: 350px;
-      width:80%;
-    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+
+  .coinsdiv {
+    position: absolute;
+    left:50%;
+    top:13%;
+    -moz-transform: translateX(-50%) translateY(0%);
+    -webkit-transform: translateX(-50%) translateY(0%);
+    height:71%;
+    max-height: 350px;
+    width:80%;
+  }
+
+  .machine {
+    position: absolute;
+    height: 50%;
+    width: 14rem;
+    border: 5px solid black;
+    background-color: #CD853F;
+    border-radius:25px; 
+    top:50%;
+    left:50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+  }  
+
+ .buydiv {
+    position: absolute;
+    left:2%;
+    bottom:1%;
+  }
+
+  .carddiv {
+    position: absolute;
+    right:3%;
+    bottom:2%;
+  }
+
+  .descr {
+    position:absolute;
+    bottom:-16%;
+    left:50%;
+    width:16em;
+   -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size:1.2rem;
+  }
+  
 
 }
+
+
+
+
+
 
 
 
@@ -423,24 +530,50 @@ table {
   .coinsdiv {
     position: absolute;
     left:50%;
-    top:25%;
-    transform: translateX(-50%) translateY(0%);
+    top:20%;
+    -moz-transform: translateX(-50%) translateY(0%);
+    -webkit-transform: translateX(-50%) translateY(0%) scale(1.6);
     height:71%;
     max-height: 350px;
-    width:80%;
+    width:40%;
   }
 
   .machine {
     position: absolute;
-    height: 60%;
+    height: 23rem;
     width: 14rem;
     border: 5px solid black;
     background-color: #CD853F;
     border-radius:25px; 
     top:50%;
     left:50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1.6);
   }  
+
+  .buydiv {
+    position: absolute;
+    left:2%;
+    bottom:1%;
+  }
+
+  .carddiv {
+    position: absolute;
+    right:3%;
+    bottom:2%;
+  }
+
+  .descr {
+    position:absolute;
+    bottom:-16%;
+    left:50%;
+    width:16em;
+   -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size:1.2rem;
+  }
   
-  
+  .coin {
+    /* -webkit-transform:scale(1.2); */
+  }
+
 }
