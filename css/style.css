@@ -139,7 +139,8 @@
   background-color:white;
   justify-content: center;
   border-radius:10px;
-  transform:translateX(-20%);
+  -webkit-transform:translateX(-20%);
+  -moz-transform:translateX(-20%);
 }
 
 .cost,.budget,.card {
@@ -384,7 +385,8 @@ table {
 }
 
 .coin:active {
-  transform:translateY(1%);
+  -webkit-transform:translateY(1%);
+  -moz-transform:translateY(1%);
 }
 
 .descr {
@@ -395,7 +397,8 @@ table {
   font-size:1.7rem;
   left:50%;
   -webkit-transform: translateX(-50%);
-  width: 200%;
+  -moz-transform: translateX(-50%);
+  width: 400%;
 }
 
 
@@ -446,7 +449,8 @@ table {
       bottom:-16%;
       left:50%;
       width:16em;
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
       font-size:1.2rem;
     }
     
