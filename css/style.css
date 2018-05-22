@@ -66,6 +66,7 @@
 
 .coin:hover {
   filter:brightness(1.07);
+  transition: 0.3s;
 }
 
 .coin1 {
