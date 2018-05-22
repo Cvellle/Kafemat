@@ -1,6 +1,4 @@
-# webpack-boilerplate
-
-clone
-install packages
+clone repository
+npm install
 npm start
 
