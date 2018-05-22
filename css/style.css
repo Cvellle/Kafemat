@@ -61,6 +61,7 @@
   align-items: center;
   text-align: center;
   display: inline-flex; 
+  cursor:pointer;
 }
 
 .coin:hover {
