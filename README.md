@@ -1,4 +1,4 @@
-clone repository
-npm install
+clone repository,
+npm install,
 npm start
 
