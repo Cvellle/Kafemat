@@ -23,13 +23,15 @@ var pos = -30;
 var id = setInterval(fall, 1000/10000);
 function fall() {
 
-    if (pos == 60) {
+    if (pos == 40) {
       clearInterval(id);
       cf.style.top = "-70%"; 
+      cf.style.opacity="0";
 
     } else {
       pos+=1; 
-      cf.style.top = pos + '%'; 
+      cf.style.top = pos + '%';
+      cf.style.opacity="0.5"; 
 
     }
   }
