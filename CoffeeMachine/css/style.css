@@ -411,7 +411,7 @@ table {
 
 
 
-@media only screen and (min-width: 115px) and (max-width: 320px) {
+@media only screen and (max-width: 320px) {
 
   .coinsdiv {
     position: absolute;
