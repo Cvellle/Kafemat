@@ -1,8 +1,6 @@
 import '../assets/styles/main.scss';
 import '../assets/images/coffee.jpg';
 import '../assets/images/coff.png';
-// import 'script/js/script.js;
-
 
 const coins = document.querySelectorAll('.coin');
 const mach = document.querySelector('.machine');
