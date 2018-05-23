@@ -5,7 +5,6 @@
   display: -webkit-flex;
   justify-content: space-around;
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
-  z-index:;
     }
     *, *:before, *:after {box-sizing: inherit; }
 
@@ -117,7 +116,7 @@
 
 .machine {
   position: absolute;
-  height: 50%;
+  height: 24rem;
   width: 14rem;
   border: 5px solid black;
   background-color: #CD853F;
@@ -198,6 +197,7 @@
   border: 3px solid black;
   position:relative;
   right:-5%;
+  cursor:pointer;
 }
 
 .resetcost {
@@ -337,6 +337,10 @@ table {
     background-color: #FFF3B2; 
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.check {
+  cursor:pointer;
 }
 
 .tokens {
