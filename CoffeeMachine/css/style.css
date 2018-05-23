@@ -674,7 +674,7 @@ table {
     
   .coinsdiv {
     display: -webkit-flex;
-    top:5%;
+    top:0.5%;
     left:50%;
     transform:translateX(-50%);
     position:absolute;
@@ -706,5 +706,8 @@ table {
     -webkit-transform: translateX(-50%) translateY(-50%);
   }
 
+  .descr {
+    bottom:-27%;
+  }
 
   }
