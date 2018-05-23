@@ -116,7 +116,7 @@
 
 .machine {
   position: absolute;
-  height: 24rem;
+  height: 50%;
   width: 14rem;
   border: 5px solid black;
   background-color: #CD853F;
@@ -197,7 +197,6 @@
   border: 3px solid black;
   position:relative;
   right:-5%;
-  cursor:pointer;
 }
 
 .resetcost {
@@ -337,10 +336,6 @@ table {
     background-color: #FFF3B2; 
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.check {
-  cursor:pointer;
 }
 
 .tokens {
@@ -536,7 +531,7 @@ table {
   .coinsdiv {
     position: absolute;
     left:50%;
-    top:20%;
+    top:50%;
     -moz-transform: translateX(-50%) translateY(0%);
     -webkit-transform: translateX(-50%) translateY(0%) scale(1.6);
     height:71%;
@@ -604,10 +599,76 @@ table {
 }
 
 
+@media only screen and (min-height: 1024px) {
 
 
-    /* min-height: 100vh; */
-  /* display: inline-flex; */
-  /* justify-content: center;*/
-   /* Safari /
--webkit-justify-content: space-around; / Safari 6.1+ */
+
+  :root {
+    background-color: rgb(178, 70, 16);
+    background-size: cover;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+      }
+      *, *:before, *:after {box-sizing: inherit; }
+  
+  .all {
+    position:relative;
+    height:50%;
+    width:100%;
+    display: -webkit-flex;
+    top:20%;
+    left:50%;
+    transform:translateX(-50%);
+    position:absolute;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
+  }
+  
+  .backgr {
+    top:0%;
+    position:absolute;
+    left:0%;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:0.15;
+    
+  }
+    
+  .coinsdiv {
+    display: -webkit-flex;
+    top:5%;
+    left:50%;
+    transform:translateX(-50%);
+    position:absolute;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
+    text-align: center;
+    
+  }
+  
+  #cf {
+    top:-70%;
+    position:absolute;
+    left:49.5%;
+    transform:translateX(-50%);
+  }
+  
+  .machine {
+    position: absolute;
+    height: 24rem;
+    width: 14rem;
+    border: 5px solid black;
+    background-color: #CD853F;
+    border-radius:25px; 
+    top:55%;
+    left:50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+  }
+
+
+  }

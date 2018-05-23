@@ -25,7 +25,7 @@ function fall() {
 
     if (pos == 60) {
       clearInterval(id);
-      cf.style.top = "-30%"; 
+      cf.style.top = "-70%"; 
 
     } else {
       pos+=1; 
