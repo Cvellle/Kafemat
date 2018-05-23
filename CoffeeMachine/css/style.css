@@ -197,6 +197,7 @@
   border: 3px solid black;
   position:relative;
   right:-5%;
+  cursor:pointer;
 }
 
 .resetcost {
@@ -299,8 +300,8 @@ table {
  
 }
 
-.prices {
-  
+.check {
+  cursor:pointer;
 }
 
 .check[type="checkbox"]:before{
