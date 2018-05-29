@@ -1,4 +1,4 @@
-:root {
+body {
   background-color: rgb(178, 70, 16);
   background-size: cover;
   align-items: center;
@@ -18,7 +18,7 @@
   opacity:0.15;
 	
 }
-	
+
 .coinsdiv {
   top:13%;
   left:50%;
@@ -197,7 +197,6 @@
   border: 3px solid black;
   position:relative;
   right:-5%;
-  cursor:pointer;
 }
 
 .resetcost {
@@ -300,72 +299,72 @@ table {
  
 }
 
-.check {
-  cursor:pointer;
+.prices {
+  
 }
 
 .check[type="checkbox"]:before{
-    position: relative;         
-    display: block;
-    width: 11px;
-    height: 11px;
-    border: 2px solid transparent;
-    content: "";
-    background:  #CD853F;
-    display: blcok;
+  position: relative;         
+  display: block;
+  width: 11px;
+  height: 11px;
+  border: 2px solid transparent;
+  content: "";
+  background:  #CD853F;
+  display: blcok;
 } 
 
 .check[type="checkbox"]:after{
-    position: relative;
-	  background-color: transparent; 
-    background-image:  url('../images/coff.png');
-    background-size: 13px 13px;
-    top:-12px;
-    left:-70%;
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius:50%;
-    content:"";
+  position: relative;
+  background-color: transparent; 
+  background-image:  url('../images/coff.png');
+  background-size: 13px 13px;
+  top:-12px;
+  left:-70%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+  content:"";
 }
 
 .check[type="checkbox"]:checked:after{   
-    height:15px;
-    width:15px;
-    background-image:  url('../images/coff.png');
-    background-size: 13px 13px;
-    background-color: #FFF3B2; 
-    background-repeat: no-repeat;
-    background-position: center;
+  height:15px;
+  width:15px;
+  // background-image:  url('../images/coff.png');
+  background-size: 13px 13px;
+  background-color: #FFF3B2; 
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .tokens {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: white;
-  height: 35px;
-  width: 70px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+background-color: white;
+height: 35px;
+width: 70px;
 }
 
 .carddiv {
-  position: absolute;
-  right:2%;
-  top:85%;
-  height:12%;
-  width:40%;
+position: absolute;
+right:2%;
+top:85%;
+height:12%;
+width:40%;
 }
 
 .card {
-  display: flex;
-  align-items: center;
-  text-align: center; 
-  height: 20px;
-  width: 70px;   
-  margin: 5%;
-  border:3px solid;
-  border-radius: 10px;
+display: flex;
+align-items: center;
+text-align: center; 
+height: 20px;
+width: 70px;   
+margin: 5%;
+border:3px solid;
+border-radius: 10px;
 }
 
 .cardtext {
@@ -406,12 +405,14 @@ table {
 
 
 
-@media only screen and (min-width: 0px) and (max-width: 320px) {
+
+
+@media only screen and (min-width: 115px) and (max-width: 320px) {
 
   .coinsdiv {
     position: absolute;
     left:50%;
-    top:2.5%;
+    top:4%;
     -moz-transform: translateX(-50%) translateY(0%);
     -webkit-transform: translateX(-50%) translateY(0%);
     height:75%;
@@ -421,15 +422,12 @@ table {
 
 
   .machine {
-    position: absolute;
-    height: 70%;
-    width: 14rem;
-    border: 5px solid black;
-    background-color: #CD853F;
-    border-radius:25px; 
-    top:53.5%;
-    left:50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
+      position: absolute;
+      left:50%;
+      top:55%;
+      transform: translateX(-50%) translateY(-50%);
+      height:71%;
+      max-height: 350px;
     }
 
    .buydiv {
@@ -462,14 +460,16 @@ table {
 
 
 
-@media only screen and (max-height: 478px) {
+
+
+@media only screen and (min-width: 115px) and (max-height: 448px) {
 
   .coinsdiv {
     position: absolute;
     left:50%;
     top:0.5%;
     -moz-transform: translateX(-50%) translateY(0%);
-    -webkit-transform: translateX(-50%) translateY(-0%) scale(0.82);
+    -webkit-transform: translateX(-50%) translateY(0%);
     height:75%;
     max-height: 350px;
     width:80%;
@@ -477,20 +477,11 @@ table {
 
 
   .machine {
-    position: absolute;
-    height: 85%;
-    width: 14rem;
-    border: 5px solid black;
-    background-color: #CD853F;
-    border-radius:25px; 
-    top:57%;
-    left:50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.82);
-    }
-
+    top:58%;
+    height:80%;
+  }
 
 }
-
 
 
 
@@ -506,7 +497,7 @@ table {
   .coinsdiv {
     position: absolute;
     left:50%;
-    top:7%;
+    top:12%;
     -moz-transform: translateX(-50%) translateY(0%);
     -webkit-transform: translateX(-50%) translateY(0%);
     height:71%;
@@ -516,12 +507,12 @@ table {
 
   .machine {
     position: absolute;
-    height: 60%;
+    height: 53%;
     width: 14rem;
     border: 5px solid black;
     background-color: #CD853F;
     border-radius:25px; 
-    top:52%;
+    top:50%;
     left:50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
   }  
@@ -614,7 +605,7 @@ table {
 
 @media only screen and (min-height: 0px) and (max-height: 644px) and (min-width: 1024px) {
 
-.coinsdiv {
+  .coinsdiv {
     top:5%;
   }
 
@@ -629,108 +620,5 @@ table {
     left:50%;
     -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
   }  
-
-}
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 1025px) {
-
-
-  :root {
-    background-color: rgb(178, 70, 16);
-    background-size: cover;
-    display: -webkit-flex;
-    align-items: center;
-    justify-content: space-around;
-    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
-      }
-      *, *:before, *:after {box-sizing: inherit; }
-  
-  .all {
-    position:relative;
-    height:50%;
-    width:100%;
-    display: -webkit-flex;
-    top:20%;
-    left:50%;
-    transform:translateX(-50%);
-    position:absolute;
-    justify-content: center;
-    flex-direction:row;
-    align-items: center;
-  }
-  
-  .backgr {
-    top:0%;
-    position:absolute;
-    left:0%;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    opacity:0.15;
-    
-  }
-    
-  .coinsdiv {
-    display: -webkit-flex;
-    top:0.5%;
-    left:50%;
-    transform:translateX(-50%);
-    position:absolute;
-    justify-content: center;
-    flex-direction:row;
-    align-items: center;
-    text-align: center;
-    
-  }
-  
-  #cf {
-    top:-70%;
-    position:absolute;
-    left:49.5%;
-    transform:translateX(-50%);
-    opacity:0;
-    transition: opacity 0.2s;
-  }
-  
-  .machine {
-    position: absolute;
-    height: 24rem;
-    width: 14rem;
-    border: 5px solid black;
-    background-color: #CD853F;
-    border-radius:25px; 
-    top:55%;
-    left:50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-  }
-
-  .descr {
-    bottom:-27%;
-  }
-
-  }
-
-
-  
-
-@media only screen and (min-height: 644px) and (max-height: 980px) and (min-width: 1024px) {
-
-  /* .coinsdiv {
-    top:-5%;
-  }   */
-
-
-  .machine {
-    -webkit-transform: translateX(-50%) translateY(-40%) scale(1);
-  }  
-
 
 }
