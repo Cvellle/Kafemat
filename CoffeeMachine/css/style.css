@@ -197,6 +197,7 @@ body {
   border: 3px solid black;
   position:relative;
   right:-5%;
+  cursor: pointer;
 }
 
 .resetcost {
@@ -221,6 +222,7 @@ body {
   border: 3px solid black;
   margin: 3%;
   border-radius:9px;
+  cursor: pointer;
 }
 
 .addimg {
@@ -271,6 +273,7 @@ button:disabled {
   width: 35%;
   margin: 3%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 ul {
@@ -299,10 +302,6 @@ table {
  
 }
 
-.prices {
-  
-}
-
 .check[type="checkbox"]:before{
   position: relative;         
   display: block;
@@ -326,6 +325,7 @@ table {
   height: 100%;
   border-radius:50%;
   content:"";
+  cursor: pointer;
 }
 
 .check[type="checkbox"]:checked:after{   
