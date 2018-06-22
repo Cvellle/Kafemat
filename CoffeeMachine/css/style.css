@@ -386,8 +386,10 @@ border-radius: 10px;
 }
 
 .coin:active {
-  -webkit-transform:translateY(1%);
-  -moz-transform:translateY(1%);
+  /* -webkit-transform:translateY(1%);
+  -moz-transform:translateY(1%); */
+  filter:brightness(1.1);
+  outline:none;
 }
 
 .descr {
