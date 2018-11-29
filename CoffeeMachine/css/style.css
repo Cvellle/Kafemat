@@ -307,7 +307,7 @@ table {
   display: block;
   width: 11px;
   height: 11px;
-  border: 2px solid transparent;
+  border: 2px solid #CD853F;
   content: "";
   background:  #CD853F;
   display: blcok;
@@ -317,8 +317,8 @@ table {
   position: relative;
   background-color: transparent; 
   background-image:  url('../images/coff.png');
-  background-size: 13px 13px;
-  top:-12px;
+  background-size: cover;
+  top:-100%;
   left:-70%;
   display: block;
   width: 100%;
@@ -331,7 +331,6 @@ table {
 .check[type="checkbox"]:checked:after{   
   height:15px;
   width:15px;
-  // background-image:  url('../images/coff.png');
   background-size: 13px 13px;
   background-color: #FFF3B2; 
   background-repeat: no-repeat;
