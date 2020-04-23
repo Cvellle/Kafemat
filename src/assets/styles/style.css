@@ -1,11 +1,12 @@
 body {
-  background-color: rgb(178, 70, 16);
+  background-color: #b24610;
   background-size: cover;
   align-items: center;
   display: -webkit-flex;
   justify-content: space-around;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
+
 *,
 *:before,
 *:after {
@@ -56,7 +57,7 @@ body {
 
 .coin {
   border-radius: 50%;
-  border: 1.5px solid rgb(178, 70, 16);
+  border: 1.5px solid #b24610;
   background-color: gold;
   justify-content: center;
   align-items: center;
@@ -304,40 +305,37 @@ table {
   -webkit-transform: translatex(5%) translatey(65%);
 }
 
-.prices {
-}
-
-.check[type="checkbox"]:before{
-  position: relative;         
+.check[type=checkbox]:before {
+  position: relative;
   display: block;
   width: 11px;
   height: 11px;
   border: 2px solid #CD853F;
   content: "";
-  background:  #CD853F;
+  background: #CD853F;
   display: blcok;
-} 
+}
 
-.check[type="checkbox"]:after{
+.check[type=checkbox]:after {
   position: relative;
-  background-color: transparent; 
-  background-image:  url('../images/coff.png');
+  background-color: transparent;
+  background-image: url("../images/coff.png");
   background-size: cover;
-  top:-100%;
-  left:-70%;
+  top: -100%;
+  left: -70%;
   display: block;
   width: 100%;
   height: 100%;
-  border-radius:50%;
-  content:"";
+  border-radius: 50%;
+  content: "";
   cursor: pointer;
 }
 
-.check[type="checkbox"]:checked:after{   
-  height:15px;
-  width:15px;
+.check[type=checkbox]:checked:after {
+  height: 15px;
+  width: 15px;
   background-size: 13px 13px;
-  background-color: #FFF3B2; 
+  background-color: #FFF3B2;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -449,7 +447,6 @@ table {
     font-size: 1.2rem;
   }
 }
-
 @media only screen and (min-width: 321px) and (max-width: 767px) {
   .coinsdiv {
     position: absolute;
@@ -496,7 +493,6 @@ table {
     font-size: 1.2rem;
   }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .coinsdiv {
     position: absolute;
@@ -543,7 +539,6 @@ table {
     font-size: 1.2rem;
   }
 }
-
 @media only screen and (min-height: 0px) and (max-height: 644px) and (min-width: 1024px) {
   .coinsdiv {
     top: 5%;
@@ -561,3 +556,5 @@ table {
     -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
   }
 }
+
+/*# sourceMappingURL=style.css.map */
