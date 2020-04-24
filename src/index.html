@@ -1,146 +1,130 @@
-<!DOCTYPE html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <title>Kafemat</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/styles/style.css" media="screen" />
-    <meta charset="UTF-8" />
-    <title>
-      Coffee Machine
-    </title>
-  </head>
+<!DOCTYPE html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <title>Kafemat</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+    rel="stylesheet"
+    type="text/css"
+  />
+</head>
 
-  <body>
-    <div class="all">
-      <div id="cf" class="coin coin2 fall" value="10" data-mon="5.0">
-        <div id="cf1" class="dec2 coin" data-mon="5.0" value="10">$</div>
+<body>
+  <div class="all">
+    <div id="cf" class="coin coin2 fall" value="10" data-mon="5.0">
+      <div id="cf1" class="dec2 coin" data-mon="5.0" value="10">$</div>
+    </div>
+    <div class="coinsdiv">
+      <div id="c1" class="coin coin1" value="5" data-mon="5.0">
+        <div class="dec1 coin" data-mon="5.0">5</div>
       </div>
-      <div class="coinsdiv">
-        <div id="c1" class="coin coin1" value="5" data-mon="5.0">
-          <div class="dec1 coin" data-mon="5.0">5</div>
-        </div>
-        <div id="c2" class="coin coin2" value="10" data-mon="10.0">
-          <div class="dec2 coin" data-mon="10.0">10</div>
-        </div>
-        <div id="c3" class="coin coin3" value="20" data-mon="20.0">
-          <div class="dec3 coin" data-mon="20.0">20</div>
-        </div>
+      <div id="c2" class="coin coin2" value="10" data-mon="10.0">
+        <div class="dec2 coin" data-mon="10.0">10</div>
       </div>
-
-      <div class="machine">
-        <div class="displaydiv">
-
-          <div class="block">
-            <div class="cost">0.00</div>
-            <div class="descr1">Cost</div>
-            <button id="reset" class="reset resetcost" onclick="reset()">
-              Reset
-            </button>
-          </div>
-
-          <div class="block">
-            <div class="budget descr2">0.00</div>
-            <div class="descr2">Budget</div>
-            <button id="reset2" class="reset resetbudg" onclick="reset2()">
-              Reset
-            </button>
-          </div>
-        </div>
-
-        <table class="table">
-          <tr class="listnames">
-            <td>Coffee</td>
-            <td>Price</td>
-          </tr>
-          <tr>
-            <td class="">
-              <form class="lif">
-                <ul>
-                  <li>
-                    <input
-                      class="check"
-                      type="checkbox"
-                      name="c"
-                      data-price="32,30"
-                      value="Espresso"
-                    />Espresso
-                  </li>
-                  <li></li>
-                  <li>
-                    <input
-                      class="check"
-                      type="checkbox"
-                      name="c"
-                      data-price="30,34"
-                      value="Ness"
-                    />Ness
-                  </li>
-                  <li></li>
-                  <li>
-                    <input
-                      class="check"
-                      type="checkbox"
-                      name="c"
-                      data-price="30,30"
-                      value="Capuccino"
-                    />Capuccino
-                  </li>
-                  <li></li>
-                  <li>
-                    <input
-                      class="check"
-                      type="checkbox"
-                      name="c"
-                      data-price="32,34"
-                      value="Ness"
-                    />Amaretto
-                  </li>
-                  <li></li>
-                  <li>
-                    <input
-                      class="check"
-                      type="checkbox"
-                      name="c"
-                      data-price="32,00"
-                      value="Ness"
-                    />Mocca
-                  </li>
-                  <li></li>
-                </ul>
-              </form>
-            </td>
-            <td class="">
-              <ul>
-                <li>32,30 RSD</li>
-                <li>30,34 RSD</li>
-                <li>30,30 RSD</li>
-                <li>32,34 RSD</li>
-                <li>32,00 RSD</li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-
-        <button id="add" class="add" type="button" onclick="addprice()">
-          Add
-        </button>
-        <button id="myBtn" class="buy" disabled>
-          Buy
-        </button>
-
-        <div class="carddiv">
-          <div class="cardamount card">1000.00</div>
-          <div class="cardtext">Card Money</div>
-        </div>
-        <p class="descr">
-          Select and add, than buy coffees
-        </p>
+      <div id="c3" class="coin coin3" value="20" data-mon="20.0">
+        <div class="dec3 coin" data-mon="20.0">20</div>
       </div>
     </div>
-
-    <img class="backgr" src="assets/images/coffee.jpg" />
-
-    <script src="script/js/script.js"></script>
-  </body>
-</html>
+    <div class="machine">
+      <div class="displaydiv">
+        <div class="block">
+          <div class="cost">0.00</div>
+          <div class="descr1">Cost</div>
+          <button class="reset resetcost" onclick="reset()">Reset</button>
+        </div>
+        <div class="block">
+          <div class="budget descr2">0.00</div>
+          <div class="descr2">Budget</div>
+          <button class="reset resetbudg" onclick="reset2()">Reset</button>
+        </div>
+      </div>
+      <table class="table">
+        <tr class="listnames">
+          <td>Coffee</td>
+          <td>Price</td>
+        </tr>
+        <tr>
+          <td class="">
+            <form class="lif">
+              <ul>
+                <li>
+                  <input
+                    class="check"
+                    type="checkbox"
+                    name="c"
+                    data-price="32,30"
+                    value="Espresso"
+                  />Espresso
+                </li>
+                <li></li>
+                <li>
+                  <input
+                    class="check"
+                    type="checkbox"
+                    name="c"
+                    data-price="30,34"
+                    value="Ness"
+                  />Ness
+                </li>
+                <li></li>
+                <li>
+                  <input
+                    class="check"
+                    type="checkbox"
+                    name="c"
+                    data-price="30,30"
+                    value="Capuccino"
+                  />Capuccino
+                </li>
+                <li></li>
+                <li>
+                  <input
+                    class="check"
+                    type="checkbox"
+                    name="c"
+                    data-price="32,34"
+                    value="Ness"
+                  />Amaretto
+                </li>
+                <li></li>
+                <li>
+                  <input
+                    class="check"
+                    type="checkbox"
+                    name="c"
+                    data-price="32,00"
+                    value="Ness"
+                  />Mocca
+                </li>
+                <li></li>
+              </ul>
+            </form>
+          </td>
+          <td>
+            <ul>
+              <li>32,30 RSD</li>
+              <li>30,34 RSD</li>
+              <li>30,30 RSD</li>
+              <li>32,34 RSD</li>
+              <li>32,00 RSD</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <button class="add" type="button" onclick="addprice()">Add</button>
+      <img
+        class="addimg"
+        style="height: 13px; width: 23px;"
+        src="src/assets/images/chart.png"
+      />
+      <button id="myBtn" class="buy" disabled>Buy</button>
+      <div class="carddiv">
+        <div class="cardamount card">1000.00</div>
+        <div class="cardtext">Card Money</div>
+      </div>
+      <p class="descr">Select and add, than buy coffees</p>
+    </div>
+  </div>
+</body>

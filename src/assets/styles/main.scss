@@ -1,10 +1,14 @@
+@import "./base/mixins.scss";
+
 body {
-  background-color: rgb(178, 70, 16);
+  //   background-color: rgb(178, 70, 16);
+  background-image: url("../images/coffee.jpg");
   background-size: cover;
   align-items: center;
   display: -webkit-flex;
   justify-content: space-around;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  margin: 0;
 }
 *,
 *:before,
@@ -12,18 +16,32 @@ body {
   box-sizing: inherit;
 }
 
+body::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(178, 70, 16, 0.781);
+  z-index: 1;
+}
+
+.all {
+  z-index: 2;
+}
+
 .backgr {
   top: 0%;
   position: absolute;
   left: 0%;
-  width: 100%;
+  max-width: 100vw;
   height: 100%;
   z-index: -1;
   opacity: 0.15;
 }
 
 .coinsdiv {
-  top: 13%;
+  position: relative;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
@@ -31,6 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 2;
 }
 
 #cf {
@@ -117,14 +136,19 @@ body {
 
 .machine {
   position: absolute;
-  height: 50%;
-  width: 14rem;
+  height: 120vw;
+  width: 70vw;
   border: 5px solid black;
   background-color: #cd853f;
   border-radius: 25px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-45%);
+
+  @include desktop {
+    height: 25rem;
+    width: 14rem;
+  }
 }
 
 .cost {
@@ -132,8 +156,8 @@ body {
   top: 5%;
   left: 14%;
   border: 3px solid black;
-  height: 35px;
-  width: 60px;
+  height: 10vw;
+  width: 18vw;
   display: inline-block;
   display: flex;
   align-items: center;
@@ -143,6 +167,11 @@ body {
   border-radius: 10px;
   -webkit-transform: translateX(-20%);
   -moz-transform: translateX(-20%);
+
+  @include desktop {
+    height: 35px;
+    width: 60px;
+  }
 }
 
 .cost,
@@ -158,6 +187,10 @@ body {
   align-items: center;
   text-align: left;
   width: 50px;
+
+  @include mobile {
+    top: 10vw;
+  }
 }
 
 .descr2 {
@@ -167,6 +200,10 @@ body {
   align-items: center;
   text-align: left;
   width: 50px;
+
+  @include mobile {
+    top: 25vw;
+  }
 }
 
 .block {
@@ -186,20 +223,31 @@ body {
   top: 17%;
   left: 14%;
   border: 3px solid black;
-  height: 35px;
-  width: 60px;
+  height: 10vw;
+  width: 18vw;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
   border-radius: 10px;
   transform: translateX(-20%);
+
+  @include desktop {
+    height: 35px;
+    width: 60px;
+  }
 }
 
 .reset {
   border: 3px solid black;
   position: relative;
   right: -5%;
+  cursor: pointer;
+
+  @include mobile {
+    height: 6vw;
+    width: 14vw;
+  }
 }
 
 .resetcost {
@@ -207,6 +255,13 @@ body {
   top: 8%;
   left: 66%;
   border-radius: 9px;
+
+  @include mobile {
+    top: 8vw;
+    left: 66%;
+    height: 6vw;
+    width: 14vw;
+  }
 }
 
 .resetbudg {
@@ -214,6 +269,13 @@ body {
   top: 20%;
   left: 66%;
   border-radius: 9px;
+
+  @include mobile {
+    top: 22.5vw;
+    left: 66%;
+    height: 6vw;
+    width: 14vw;
+  }
 }
 
 .add {
@@ -224,6 +286,7 @@ body {
   border: 3px solid black;
   margin: 3%;
   border-radius: 9px;
+  cursor: pointer;
 }
 
 .addimg {
@@ -277,6 +340,7 @@ button:disabled {
   width: 35%;
   margin: 3%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 ul {
@@ -285,61 +349,125 @@ ul {
   margin: 0px;
 }
 
-.listnames {
-  text-align: center;
+li {
+  line-height: 4vh;
+
+  @include desktop {
+    line-height: 25px;
+  }
 }
 
-form > ul > li {
-  width: 100px;
+.listnames {
+  text-align: center;
+  align-items: center;
 }
 
 table {
-  font-size: 1em;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  padding: 0px;
-  -moz-transform: translatex(5%) translatey(65%);
-  -webkit-transform: translatex(5%) translatey(65%);
-}
-
-.prices {
-}
-
-.check[type="checkbox"]:before{
-  position: relative;         
-  display: block;
-  width: 11px;
-  height: 11px;
-  border: 2px solid #CD853F;
-  content: "";
-  background:  #CD853F;
-  display: blcok;
-} 
-
-.check[type="checkbox"]:after{
   position: relative;
-  background-color: transparent; 
-  background-image:  url('../images/coff.png');
-  background-size: cover;
-  top:-100%;
-  left:-70%;
-  display: block;
+  top: 25%;
+  font-size: 5.5vw;
   width: 100%;
-  height: 100%;
-  border-radius:50%;
-  content:"";
-  cursor: pointer;
+  justify-content: center;
+  align-content: stretch;
+  display: flex;
+  padding: 0px !important;
+
+  @include desktop {
+    top: 0;
+    font-size: 1em;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0px;
+    -moz-transform: translatex(5%) translatey(65%);
+    -webkit-transform: translatex(5%) translatey(65%);
+  }
 }
 
-.check[type="checkbox"]:checked:after{   
-  height:15px;
-  width:15px;
-  background-size: 13px 13px;
-  background-color: #FFF3B2; 
+tr {
+  display: flex;
+  justify-content: space-around;
+}
+
+.check[type="checkbox"]:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  position: relative;
+  display: block;
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid #cd853f;
+  content: "";
+  background: #cd853f;
+  display: blcok;
+
+  @include desktop {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+.check[type="checkbox"]:after {
+  position: relative;
+  top: 0;
+  left: 0;
+  position: relative;
+  background-color: transparent;
+  background-image: url("../images/coff.png");
+  background-size: cover;
+  top: -4vw;
+  left: -3vw;
+  display: block;
+  width: 4.5vw;
+  height: 4.5vw;
+  border-radius: 50%;
+  content: "";
+  cursor: pointer;
+
+  @include desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: relative;
+    background-color: transparent;
+    background-image: url("../images/coff.png");
+    background-size: cover;
+    top: -110%;
+    left: -10%;
+    display: block;
+    width: 4.5vw;
+    height: 4.5vw;
+    border-radius: 50%;
+    content: "";
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+li {
+  position: relative;
+}
+
+form input {
+  position: relative;
+}
+
+.check[type="checkbox"]:checked:after {
+  background-size: cover;
+  width: 4.5vw;
+  height: 4.5vw;
+  background-color: #fff3b2;
   background-repeat: no-repeat;
   background-position: center;
+
+  @include desktop {
+    height: 15px;
+    width: 15px;
+    background-size: 13px 13px;
+  }
 }
 
 .tokens {
@@ -390,174 +518,212 @@ table {
 }
 
 .coin:active {
-  -webkit-transform: translateY(1%);
-  -moz-transform: translateY(1%);
+  filter: brightness(1.1);
+  outline: none;
 }
 
 .descr {
   position: absolute;
   text-align: center;
-  bottom: -20%;
+  bottom: -15%;
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 5vw;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
-  width: 400%;
-}
+  width: 100vw;
 
-@media only screen and (min-width: 115px) and (max-width: 320px) {
-  .coinsdiv {
-    position: absolute;
-    left: 50%;
-    top: 4%;
-    -moz-transform: translateX(-50%) translateY(0%);
-    -webkit-transform: translateX(-50%) translateY(0%);
-    height: 75%;
-    max-height: 350px;
-    width: 80%;
-  }
-
-  .machine {
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translateX(-50%) translateY(-50%);
-    height: 71%;
-    max-height: 350px;
-  }
-
-  .buydiv {
-    position: absolute;
-    left: 2%;
-    bottom: 1%;
-  }
-
-  .carddiv {
-    position: absolute;
-    right: 3%;
-    bottom: 2%;
-  }
-
-  .descr {
-    position: absolute;
-    bottom: -16%;
-    left: 50%;
-    width: 16em;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    font-size: 1.2rem;
+  @include desktop {
+    font-size: 1.7rem;
+    bottom: -20%;
   }
 }
 
-@media only screen and (min-width: 321px) and (max-width: 767px) {
-  .coinsdiv {
-    position: absolute;
-    left: 50%;
-    top: 12%;
-    -moz-transform: translateX(-50%) translateY(0%);
-    -webkit-transform: translateX(-50%) translateY(0%);
-    height: 71%;
-    max-height: 350px;
-    width: 80%;
-  }
+//   @media only screen and (min-width: 115px) and (max-width: 320px) {
 
-  .machine {
-    position: absolute;
-    height: 53%;
-    width: 14rem;
-    border: 5px solid black;
-    background-color: #cd853f;
-    border-radius: 25px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-  }
+//     .coinsdiv {
+//       position: absolute;
+//       left:50%;
+//       top:4%;
+//       -moz-transform: translateX(-50%) translateY(0%);
+//       -webkit-transform: translateX(-50%) translateY(0%);
+//       height:75%;
+//       max-height: 350px;
+//       width:80%;
+//     }
 
-  .buydiv {
-    position: absolute;
-    left: 2%;
-    bottom: 1%;
-  }
+//     .machine {
+//         position: absolute;
+//         left:50%;
+//         top:55%;
+//         transform: translateX(-50%) translateY(-50%);
+//         height:71%;
+//         max-height: 350px;
+//       }
 
-  .carddiv {
-    position: absolute;
-    right: 3%;
-    bottom: 2%;
-  }
+//      .buydiv {
+//         position: absolute;
+//         left:2%;
+//         bottom:1%;
+//       }
 
-  .descr {
-    position: absolute;
-    bottom: -16%;
-    left: 50%;
-    width: 16em;
-    -moz-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 1.2rem;
-  }
-}
+//       .carddiv {
+//         position: absolute;
+//         right:3%;
+//         bottom:2%;
+//       }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .coinsdiv {
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    -moz-transform: translateX(-50%) translateY(0%);
-    -webkit-transform: translateX(-50%) translateY(0%) scale(1.6);
-    height: 71%;
-    max-height: 350px;
-    width: 40%;
-  }
+//       .descr {
+//         position:absolute;
+//         bottom:-16%;
+//         left:50%;
+//         width:16em;
+//         -webkit-transform: translateX(-50%);
+//         -moz-transform: translateX(-50%);
+//         font-size:1.2rem;
+//       }
 
-  .machine {
-    position: absolute;
-    height: 23rem;
-    width: 14rem;
-    border: 5px solid black;
-    background-color: #cd853f;
-    border-radius: 25px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(1.6);
-  }
+//   }
 
-  .buydiv {
-    position: absolute;
-    left: 2%;
-    bottom: 1%;
-  }
+//   @media only screen and (max-width: 320px) and (max-height: 448px) {
 
-  .carddiv {
-    position: absolute;
-    right: 3%;
-    bottom: 2%;
-  }
+//     .coinsdiv {
+//       position: absolute;
+//       left:50%;
+//       top:0.5%;
+//       -moz-transform: translateX(-50%) translateY(0%);
+//       -webkit-transform: translateX(-50%) translateY(0%);
+//       height:75%;
+//       max-height: 350px;
+//       width:80%;
+//     }
 
-  .descr {
-    position: absolute;
-    bottom: -16%;
-    left: 50%;
-    width: 16em;
-    -moz-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 1.2rem;
-  }
-}
+//     .machine {
+//       top:62%;
+//       height:85%;
+//     }
 
-@media only screen and (min-height: 0px) and (max-height: 644px) and (min-width: 1024px) {
-  .coinsdiv {
-    top: 5%;
-  }
+//     table {
+//       -moz-transform: translateX(5%) translateY(49%);
+//       -webkit-transform: translateX(5%) translateY(49%);
+//   }
 
-  .machine {
-    position: absolute;
-    height: 21rem;
-    width: 14rem;
-    border: 5px solid black;
-    background-color: #cd853f;
-    border-radius: 25px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
-  }
-}
+//   }
+
+//   @media only screen and (min-width: 321px) and (max-width: 767px) {
+
+//     .coinsdiv {
+//       position: absolute;
+//       left:50%;
+//       top:0%;
+//       -moz-transform: translateX(-50%) translateY(0%)  scale(0.8);
+//       -webkit-transform: translateX(-50%) translateY(0%)  scale(0.8);
+//       height:71%;
+//       max-height: 350px;
+//       width:80%;
+//     }
+
+//     .machine {
+//       position: absolute;
+//       height: 85%;
+//       width: 14rem;
+//       border: 5px solid black;
+//       background-color: #CD853F;
+//       border-radius:25px;
+//       top:50%;
+//       left:50%;
+//       -webkit-transform: translateX(-50%) translateY(-40%) scale(0.8);
+//     }
+
+//    .buydiv {
+//       position: absolute;
+//       left:2%;
+//       bottom:1%;
+//     }
+
+//     .carddiv {
+//       position: absolute;
+//       right:3%;
+//       bottom:2%;
+//     }
+
+//     .descr {
+//       position:absolute;
+//       bottom:-16%;
+//       left:50%;
+//       width:16em;
+//      -moz-transform: translateX(-50%);
+//       -webkit-transform: translateX(-50%);
+//       font-size:1.2rem;
+//     }
+
+//   }
+
+//   @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+//     .coinsdiv {
+//       position: absolute;
+//       left:50%;
+//       top:20%;
+//       -moz-transform: translateX(-50%) translateY(0%);
+//       -webkit-transform: translateX(-50%) translateY(0%) scale(1.6);
+//       height:71%;
+//       max-height: 350px;
+//       width:40%;
+//     }
+
+//     .machine {
+//       position: absolute;
+//       height: 23rem;
+//       width: 14rem;
+//       border: 5px solid black;
+//       background-color: #CD853F;
+//       border-radius:25px;
+//       top:50%;
+//       left:50%;
+//       -webkit-transform: translateX(-50%) translateY(-50%) scale(1.6);
+//     }
+
+//     .buydiv {
+//       position: absolute;
+//       left:2%;
+//       bottom:1%;
+//     }
+
+//     .carddiv {
+//       position: absolute;
+//       right:3%;
+//       bottom:2%;
+//     }
+
+//     .descr {
+//       position:absolute;
+//       bottom:-16%;
+//       left:50%;
+//       width:16em;
+//      -moz-transform: translateX(-50%);
+//       -webkit-transform: translateX(-50%);
+//       font-size:1.2rem;
+//     }
+
+//   }
+
+//   @media only screen and (min-height: 0px) and (max-height: 644px) and (min-width: 1024px) {
+
+//     .coinsdiv {
+//       top:5%;
+//     }
+
+//   .machine {
+//       position: absolute;
+//       height: 21rem;
+//       width: 14rem;
+//       border: 5px solid black;
+//       background-color: #CD853F;
+//       border-radius:25px;
+//       top:50%;
+//       left:50%;
+//       -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+//     }
+
+//   }

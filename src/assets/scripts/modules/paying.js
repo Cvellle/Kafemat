@@ -1,65 +1,19 @@
-
 const coins = document.querySelectorAll('.coin');
 const mach = document.querySelector('.machine');
 const budget = document.querySelector('.budget');
 const card = document.querySelector('.card');
-  
-/* INSERT MONEY */
 
-function insert (e) {
-    e.stopPropagation();
-    budget.innerHTML = (Number(budget.innerHTML) + Number(this.dataset.mon)).toFixed(2); 
-    card.innerHTML = (Number(card.innerHTML) - Number(this.dataset.mon)).toFixed(2);
-      if (Number(cost.innerHTML) <= Number(budget.innerHTML)){
-    document.getElementById("myBtn").disabled = false;
-   } 
-    
-	
-// var inp8 = document.createElement("div");  
-// cf.appendChild(inp8);
-    
-    //cf.style.transform="translateY(20px -20px)";
-var pos = -30;
-var id = setInterval(fall, 1000/10000);
-function fall() {
+const resetcost = document.querySelector('.resetcost');
+const resetbudg = document.querySelector('.resetbudg');
+const add = document.querySelector(".add");
 
-    if (pos == 40) {
-      clearInterval(id);
-      cf.style.top = "-70%"; 
-      cf.style.opacity="0";
-
-    } else {
-      pos+=1; 
-      cf.style.top = pos + '%';
-      cf.style.opacity="0.5"; 
-
-    }
-  }
-
-    
- }
-
-  coins.forEach(coin=>coin.addEventListener('click',insert));
-
-const buy = document.querySelector('.buy');
-  
-function buying () {
-    const budget = document.querySelector('.budget');
-    if (Number(cost.innerHTML) <= Number(budget.innerHTML))
-   {
-      document.getElementById("myBtn").disabled = false;  
-
-      budget.innerHTML = (Number(budget.innerHTML - cost.innerHTML)).toFixed(2);  
-      cost.innerHTML = Number(0).toFixed(2);
-   }
-    priceNodes.length = 0;   
- }
-  
-  buy.addEventListener('click',buying);
+add.addEventListener("click", addprice)
+resetcost.addEventListener("click", reset);
+resetbudg.addEventListener("click", reset2);
 
  /* RESETS VALUES OF DISPLAYS, RETURNS MONEY TO CARD */ 
   
-function reset() {   
+ function reset() {   
     cost.innerHTML = Number(0).toFixed(2);
     priceNodes.length = 0;
 }
@@ -69,8 +23,6 @@ function reset2() {
     
 }
    
-/* ARRANGE CHECKBOXES AND ADDS PRICES TO COUNT */
-
 const form = document.querySelector(".lif");
 const inputs = form.getElementsByTagName("input");
 const priceNodes = []; 
@@ -99,5 +51,3 @@ function addprice () {
       cost.innerHTML = Number(din+"."+ostatakPara).toFixed(2);    
   
 }
-
-
