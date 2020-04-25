@@ -86,6 +86,53 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/scripts/index.js":
+/*!*********************************!*\
+  !*** ./assets/scripts/index.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n__webpack_require__(/*! ../styles/main.scss */ \"./assets/styles/main.scss\");\n__webpack_require__(/*! ./modules/coins.js */ \"./assets/scripts/modules/coins.js\");\n__webpack_require__(/*! ./modules/paying.js */ \"./assets/scripts/modules/paying.js\");\n\n//# sourceURL=webpack:///./assets/scripts/index.js?");
+
+/***/ }),
+
+/***/ "./assets/scripts/modules/coins.js":
+/*!*****************************************!*\
+  !*** ./assets/scripts/modules/coins.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nvar coins = document.querySelectorAll('.coin');\nvar mach = document.querySelector('.machine');\nvar budget = document.querySelector('.budget');\nvar card = document.querySelector('.card');\n\n/* INSERT MONEY */\n\nfunction insert(e) {\n    e.stopPropagation();\n    budget.innerHTML = (Number(budget.innerHTML) + Number(this.dataset.mon)).toFixed(2);\n    card.innerHTML = (Number(card.innerHTML) - Number(this.dataset.mon)).toFixed(2);\n    if (Number(cost.innerHTML) <= Number(budget.innerHTML)) {\n        document.getElementById(\"myBtn\").disabled = false;\n    }\n\n    var pos = -30;\n    var id = setInterval(fall, 1000 / 10000);\n    function fall() {\n\n        if (pos == 60) {\n            clearInterval(id);\n            cf.style.top = \"-30%\";\n        } else {\n            pos += 1;\n            cf.style.top = pos + '%';\n        }\n    }\n}\n\ncoins.forEach(function (coin) {\n    return coin.addEventListener('click', insert);\n});\n\nvar buy = document.querySelector('.buy');\n\nfunction buying() {\n    var budget = document.querySelector('.budget');\n    if (Number(cost.innerHTML) <= Number(budget.innerHTML)) {\n        document.getElementById(\"myBtn\").disabled = false;\n\n        budget.innerHTML = Number(budget.innerHTML - cost.innerHTML).toFixed(2);\n        cost.innerHTML = Number(0).toFixed(2);\n    }\n    priceNodes.length = 0;\n}\n\nbuy.addEventListener('click', buying);\n\n/* RESETS VALUES OF DISPLAYS, RETURNS MONEY TO CARD */\n\nfunction reset() {\n    cost.innerHTML = Number(0).toFixed(2);\n    priceNodes.length = 0;\n}\nfunction reset2() {\n    card.innerHTML = Number(Number(Number(card.innerHTML).toFixed(2)) + Number(Number(budget.innerHTML).toFixed(2))).toFixed(2);\n    budget.innerHTML = Number(0).toFixed(2);\n}\n\n/* ARRANGE CHECKBOXES AND ADDS PRICES TO COUNT */\n\nvar form = document.querySelector(\".lif\");\nvar inputs = form.getElementsByTagName(\"input\");\nvar priceNodes = [];\nvar cost = document.querySelector('.cost');\n\nfunction addprice() {\n    for (var i = 0, max = inputs.length; i < max; i += 1) {\n        if (inputs[i].type === \"checkbox\" && inputs[i].checked) {\n            inputs[i].checked = !inputs[i].checked;\n            priceNodes.push(inputs[i]);\n        }\n    }\n\n    /* takes price values from data of objects and adds to count  */\n    var para = priceNodes.map(function (node) {\n        return node.dataset.price;\n    }).map(function (priceCode) {\n        var _priceCode$split$map = priceCode.split(',').map(parseFloat),\n            _priceCode$split$map2 = _slicedToArray(_priceCode$split$map, 2),\n            din = _priceCode$split$map2[0],\n            par = _priceCode$split$map2[1];\n\n        return din * 100 + par;\n    }).reduce(function (total, thisPara) {\n        return total + thisPara;\n    });\n\n    var ostatakPara = para;\n    var din = Math.floor(ostatakPara / 100);\n    ostatakPara = ostatakPara % 100;\n    cost.innerHTML = Number(din + \".\" + ostatakPara).toFixed(2);\n}\n\n//# sourceURL=webpack:///./assets/scripts/modules/coins.js?");
+
+/***/ }),
+
+/***/ "./assets/scripts/modules/paying.js":
+/*!******************************************!*\
+  !*** ./assets/scripts/modules/paying.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nvar coins = document.querySelectorAll('.coin');\nvar mach = document.querySelector('.machine');\nvar budget = document.querySelector('.budget');\nvar card = document.querySelector('.card');\n\nvar resetcost = document.querySelector('.resetcost');\nvar resetbudg = document.querySelector('.resetbudg');\nvar add = document.querySelector(\".add\");\n\nadd.addEventListener(\"click\", addprice);\nresetcost.addEventListener(\"click\", reset);\nresetbudg.addEventListener(\"click\", reset2);\n\n/* RESETS VALUES OF DISPLAYS, RETURNS MONEY TO CARD */\n\nfunction reset() {\n  cost.innerHTML = Number(0).toFixed(2);\n  priceNodes.length = 0;\n}\nfunction reset2() {\n  card.innerHTML = Number(Number(Number(card.innerHTML).toFixed(2)) + Number(Number(budget.innerHTML).toFixed(2))).toFixed(2);\n  budget.innerHTML = Number(0).toFixed(2);\n}\n\nvar form = document.querySelector(\".lif\");\nvar inputs = form.getElementsByTagName(\"input\");\nvar priceNodes = [];\nvar cost = document.querySelector('.cost');\n\nfunction addprice() {\n  for (var i = 0, max = inputs.length; i < max; i += 1) {\n    if (inputs[i].type === \"checkbox\" && inputs[i].checked) {\n      inputs[i].checked = !inputs[i].checked;\n      priceNodes.push(inputs[i]);\n    }\n  }\n\n  /* takes price values from data of objects and adds to count  */\n  var para = priceNodes.map(function (node) {\n    return node.dataset.price;\n  }).map(function (priceCode) {\n    var _priceCode$split$map = priceCode.split(',').map(parseFloat),\n        _priceCode$split$map2 = _slicedToArray(_priceCode$split$map, 2),\n        din = _priceCode$split$map2[0],\n        par = _priceCode$split$map2[1];\n\n    return din * 100 + par;\n  }).reduce(function (total, thisPara) {\n    return total + thisPara;\n  });\n\n  var ostatakPara = para;\n  var din = Math.floor(ostatakPara / 100);\n  ostatakPara = ostatakPara % 100;\n  cost.innerHTML = Number(din + \".\" + ostatakPara).toFixed(2);\n}\n\n//# sourceURL=webpack:///./assets/scripts/modules/paying.js?");
+
+/***/ }),
+
+/***/ "./assets/styles/main.scss":
+/*!*********************************!*\
+  !*** ./assets/styles/main.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/styles/main.scss?");
+
+/***/ }),
+
 /***/ "./node_modules/babel-polyfill/lib/index.js":
 /*!**************************************************!*\
   !*** ./node_modules/babel-polyfill/lib/index.js ***!
@@ -3838,61 +3885,14 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/assets/scripts/index.js":
-/*!*************************************!*\
-  !*** ./src/assets/scripts/index.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\n__webpack_require__(/*! ../styles/main.scss */ \"./src/assets/styles/main.scss\");\n__webpack_require__(/*! ./modules/coins.js */ \"./src/assets/scripts/modules/coins.js\");\n__webpack_require__(/*! ./modules/paying.js */ \"./src/assets/scripts/modules/paying.js\");\n\n//# sourceURL=webpack:///./src/assets/scripts/index.js?");
-
-/***/ }),
-
-/***/ "./src/assets/scripts/modules/coins.js":
-/*!*********************************************!*\
-  !*** ./src/assets/scripts/modules/coins.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nvar coins = document.querySelectorAll('.coin');\nvar mach = document.querySelector('.machine');\nvar budget = document.querySelector('.budget');\nvar card = document.querySelector('.card');\n\n/* INSERT MONEY */\n\nfunction insert(e) {\n    e.stopPropagation();\n    budget.innerHTML = (Number(budget.innerHTML) + Number(this.dataset.mon)).toFixed(2);\n    card.innerHTML = (Number(card.innerHTML) - Number(this.dataset.mon)).toFixed(2);\n    if (Number(cost.innerHTML) <= Number(budget.innerHTML)) {\n        document.getElementById(\"myBtn\").disabled = false;\n    }\n\n    var pos = -30;\n    var id = setInterval(fall, 1000 / 10000);\n    function fall() {\n\n        if (pos == 60) {\n            clearInterval(id);\n            cf.style.top = \"-30%\";\n        } else {\n            pos += 1;\n            cf.style.top = pos + '%';\n        }\n    }\n}\n\ncoins.forEach(function (coin) {\n    return coin.addEventListener('click', insert);\n});\n\nvar buy = document.querySelector('.buy');\n\nfunction buying() {\n    var budget = document.querySelector('.budget');\n    if (Number(cost.innerHTML) <= Number(budget.innerHTML)) {\n        document.getElementById(\"myBtn\").disabled = false;\n\n        budget.innerHTML = Number(budget.innerHTML - cost.innerHTML).toFixed(2);\n        cost.innerHTML = Number(0).toFixed(2);\n    }\n    priceNodes.length = 0;\n}\n\nbuy.addEventListener('click', buying);\n\n/* RESETS VALUES OF DISPLAYS, RETURNS MONEY TO CARD */\n\nfunction reset() {\n    cost.innerHTML = Number(0).toFixed(2);\n    priceNodes.length = 0;\n}\nfunction reset2() {\n    card.innerHTML = Number(Number(Number(card.innerHTML).toFixed(2)) + Number(Number(budget.innerHTML).toFixed(2))).toFixed(2);\n    budget.innerHTML = Number(0).toFixed(2);\n}\n\n/* ARRANGE CHECKBOXES AND ADDS PRICES TO COUNT */\n\nvar form = document.querySelector(\".lif\");\nvar inputs = form.getElementsByTagName(\"input\");\nvar priceNodes = [];\nvar cost = document.querySelector('.cost');\n\nfunction addprice() {\n    for (var i = 0, max = inputs.length; i < max; i += 1) {\n        if (inputs[i].type === \"checkbox\" && inputs[i].checked) {\n            inputs[i].checked = !inputs[i].checked;\n            priceNodes.push(inputs[i]);\n        }\n    }\n\n    /* takes price values from data of objects and adds to count  */\n    var para = priceNodes.map(function (node) {\n        return node.dataset.price;\n    }).map(function (priceCode) {\n        var _priceCode$split$map = priceCode.split(',').map(parseFloat),\n            _priceCode$split$map2 = _slicedToArray(_priceCode$split$map, 2),\n            din = _priceCode$split$map2[0],\n            par = _priceCode$split$map2[1];\n\n        return din * 100 + par;\n    }).reduce(function (total, thisPara) {\n        return total + thisPara;\n    });\n\n    var ostatakPara = para;\n    var din = Math.floor(ostatakPara / 100);\n    ostatakPara = ostatakPara % 100;\n    cost.innerHTML = Number(din + \".\" + ostatakPara).toFixed(2);\n}\n\n//# sourceURL=webpack:///./src/assets/scripts/modules/coins.js?");
-
-/***/ }),
-
-/***/ "./src/assets/scripts/modules/paying.js":
-/*!**********************************************!*\
-  !*** ./src/assets/scripts/modules/paying.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nvar coins = document.querySelectorAll('.coin');\nvar mach = document.querySelector('.machine');\nvar budget = document.querySelector('.budget');\nvar card = document.querySelector('.card');\n\nvar resetcost = document.querySelector('.resetcost');\nvar resetbudg = document.querySelector('.resetbudg');\nvar add = document.querySelector(\".add\");\n\nadd.addEventListener(\"click\", addprice);\nresetcost.addEventListener(\"click\", reset);\nresetbudg.addEventListener(\"click\", reset2);\n\n/* RESETS VALUES OF DISPLAYS, RETURNS MONEY TO CARD */\n\nfunction reset() {\n  cost.innerHTML = Number(0).toFixed(2);\n  priceNodes.length = 0;\n}\nfunction reset2() {\n  card.innerHTML = Number(Number(Number(card.innerHTML).toFixed(2)) + Number(Number(budget.innerHTML).toFixed(2))).toFixed(2);\n  budget.innerHTML = Number(0).toFixed(2);\n}\n\nvar form = document.querySelector(\".lif\");\nvar inputs = form.getElementsByTagName(\"input\");\nvar priceNodes = [];\nvar cost = document.querySelector('.cost');\n\nfunction addprice() {\n  for (var i = 0, max = inputs.length; i < max; i += 1) {\n    if (inputs[i].type === \"checkbox\" && inputs[i].checked) {\n      inputs[i].checked = !inputs[i].checked;\n      priceNodes.push(inputs[i]);\n    }\n  }\n\n  /* takes price values from data of objects and adds to count  */\n  var para = priceNodes.map(function (node) {\n    return node.dataset.price;\n  }).map(function (priceCode) {\n    var _priceCode$split$map = priceCode.split(',').map(parseFloat),\n        _priceCode$split$map2 = _slicedToArray(_priceCode$split$map, 2),\n        din = _priceCode$split$map2[0],\n        par = _priceCode$split$map2[1];\n\n    return din * 100 + par;\n  }).reduce(function (total, thisPara) {\n    return total + thisPara;\n  });\n\n  var ostatakPara = para;\n  var din = Math.floor(ostatakPara / 100);\n  ostatakPara = ostatakPara % 100;\n  cost.innerHTML = Number(din + \".\" + ostatakPara).toFixed(2);\n}\n\n//# sourceURL=webpack:///./src/assets/scripts/modules/paying.js?");
-
-/***/ }),
-
-/***/ "./src/assets/styles/main.scss":
-/*!*************************************!*\
-  !*** ./src/assets/styles/main.scss ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/assets/styles/main.scss?");
-
-/***/ }),
-
 /***/ 0:
-/*!**********************************************************!*\
-  !*** multi babel-polyfill ./src/assets/scripts/index.js ***!
-  \**********************************************************/
+/*!******************************************************!*\
+  !*** multi babel-polyfill ./assets/scripts/index.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! babel-polyfill */\"./node_modules/babel-polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ./src/assets/scripts/index.js */\"./src/assets/scripts/index.js\");\n\n\n//# sourceURL=webpack:///multi_babel-polyfill_./src/assets/scripts/index.js?");
+eval("__webpack_require__(/*! babel-polyfill */\"./node_modules/babel-polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ./assets/scripts/index.js */\"./assets/scripts/index.js\");\n\n\n//# sourceURL=webpack:///multi_babel-polyfill_./assets/scripts/index.js?");
 
 /***/ })
 

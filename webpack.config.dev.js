@@ -1,14 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: {
-		app: ['babel-polyfill', './src/assets/scripts/index.js']
+		app: ['babel-polyfill', './assets/scripts/index.js']
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -50,7 +49,7 @@ module.exports = {
     {
       test: /\.(jpe?g|png|gif|svg)$/,
       include: [
-        path.resolve(__dirname, 'src/assets/images')
+        path.resolve(__dirname, 'assets/images')
       ],
       use: [
         {
@@ -65,7 +64,7 @@ module.exports = {
     {
       test: /\.(png|ico)$/,
       include: [
-        path.resolve(__dirname, 'src/assets/favicons')
+        path.resolve(__dirname, 'assets/favicons')
       ],
       use: [
         {
@@ -80,7 +79,7 @@ module.exports = {
     {
       test: /.(ttf|svg|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
       include: [
-        path.resolve(__dirname, 'src/assets/fonts')
+        path.resolve(__dirname, 'assets/fonts')
       ],
       use: {
         loader: 'file-loader',
@@ -95,12 +94,15 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			hash: true,
-			template: './src/index.html'
+			template: 'index.html'
     }),
     new OptimizeCssAssetsPlugin,
 		new MiniCssExtractPlugin({
       filename: 'styles.bundle.css'
-    })
+    }),
+    new CopyPlugin([
+      { from: 'assets/images', to: './assets/images' },
+    ])
 	],
   devServer: {
     port: 3000

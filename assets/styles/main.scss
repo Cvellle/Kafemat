@@ -1,0 +1,656 @@
+@import "./base/mixins.scss";
+
+body {
+  background-image: url("../images/coffee.jpg");
+  background-size: cover;
+  align-items: center;
+  display: -webkit-flex;
+  justify-content: space-around;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  margin: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(178, 70, 16, 0.781);
+  z-index: 1;
+}
+
+.all {
+  z-index: 2;
+}
+
+.backgr {
+  top: 0%;
+  position: absolute;
+  left: 0%;
+  max-width: 100vw;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.coinsdiv {
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+#cf {
+  top: -30%;
+  position: absolute;
+  left: 49.5%;
+  transform: translateX(-50%);
+}
+
+.coin {
+  border-radius: 50%;
+  border: 1.5px solid rgb(178, 70, 16);
+  background-color: gold;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: inline-flex;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.07);
+    transition: 0.3s;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+.coin1 {
+  height: 3rem;
+  width: 3rem;
+
+  @include tablet {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  .dec1 {
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 0.1rem dotted;
+    font: italic bold 17px/30px Georgia, serif;
+
+    @include tablet {
+      height: 6vw;
+      width: 6vw;
+      font: italic bold 3vw Georgia, serif;
+    }
+  }
+}
+
+.coin2 {
+  height: 3.4rem;
+  width: 3.4rem;
+
+  @include tablet {
+    height: 10vw;
+    width: 10vw;
+  }
+
+  .dec2 {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.1rem dotted;
+    margin: 3px;
+    font: italic bold 23px/30px Georgia, serif;
+
+    @include tablet {
+      font: italic bold 4.3vw Georgia, serif;
+      height: 8vw;
+      width: 8vw;
+    }
+  }
+}
+
+.coin3 {
+  height: 4rem;
+  width: 4rem;
+
+  @include tablet {
+    height: 12vw;
+    width: 12vw;
+  }
+
+  .dec3 {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: 0.1rem dotted;
+    margin: 3px;
+    font: italic bold 24px/30px Georgia, serif;
+
+    @include tablet {
+      height: 10vw;
+      width: 10vw;
+      font: italic bold 5.5vw Georgia, serif;
+    }
+  }
+}
+
+.machine {
+  position: absolute;
+  height: 120vw;
+  width: 70vw;
+  border: 5px solid black;
+  background-color: #cd853f;
+  border-radius: 25px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-45%);
+
+  @include tablet {
+    border: 1vw solid black;
+    border-radius: 5vw;
+    width: 50vw;
+    height: 87vw;
+  }
+
+  @include desktop {
+    height: 25rem;
+    width: 14rem;
+  }
+
+  .cost {
+    position: absolute;
+    top: 5%;
+    left: 14%;
+    border: 3px solid black;
+    height: 10vw;
+    width: 18vw;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    justify-content: center;
+    border-radius: 10px;
+    -webkit-transform: translateX(-20%);
+    -moz-transform: translateX(-20%);
+
+    @include tablet {
+      height: 7vw;
+      width: 12vw;
+      font-size: 2.5vw;
+    }
+
+    @include desktop {
+      height: 35px;
+      width: 60px;
+    }
+  }
+
+  .descr1 {
+    position: absolute;
+    top: 8%;
+    left: 41%;
+    align-items: center;
+    text-align: left;
+    width: 50px;
+
+    @include mobile {
+      top: 10vw;
+    }
+
+    @include tablet {
+      font-size: 2.5vw;
+    }
+  }
+
+  .descr2 {
+    position: absolute;
+    top: 20%;
+    left: 41%;
+    align-items: center;
+    text-align: left;
+    width: 50px;
+
+    @include mobile {
+      top: 25vw;
+    }
+
+    @include tablet {
+      font-size: 2.5vw;
+    }
+  }
+
+  .block {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 3%;
+  }
+
+  .displaydiv {
+    margin: 7%;
+  }
+
+  .budget {
+    position: absolute;
+    top: 17%;
+    left: 14%;
+    border: 3px solid black;
+    height: 10vw;
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    transform: translateX(-20%);
+
+    @include tablet {
+      height: 7vw;
+      width: 12vw;
+      font-size: 2.5vw;
+    }
+
+    @include desktop {
+      height: 35px;
+      width: 60px;
+    }
+  }
+
+  .reset {
+    border: 0.7vw solid black;
+    position: relative;
+    cursor: pointer;
+
+    @include tablet {
+      font-size: 2.3vw;
+      right: -7%;
+    }
+
+    @include desktop {
+      border: 3px solid black;
+    }
+  }
+
+  .resetcost {
+    position: absolute;
+    top: 7.5%;
+    left: 70%;
+    border-radius: 9px;
+
+    @include tablet {
+      top: 6vw;
+      left: 70%;
+      height: 3vw;
+      width: 8vw;
+    }
+
+    @include mobile {
+      top: 9vw;
+      left: 73%;
+      height: 4vw;
+      width: 9vw;
+    }
+  }
+
+  .resetbudg {
+    position: absolute;
+    top: 19.5%;
+    left: 70%;
+    border-radius: 9px;
+
+    @include tablet {
+      top: 16.5vw;
+      left: 70%;
+      height: 3vw;
+      width: 8vw;
+    }
+
+    @include mobile {
+      top: 24.5vw;
+      left: 73%;
+      height: 4vw;
+      width: 9vw;
+    }
+  }
+
+  table {
+    position: relative;
+    top: 25%;
+    font-size: 5vw;
+    width: 100%;
+    justify-content: center;
+    align-content: stretch;
+    display: flex;
+    padding: 0px !important;
+
+    @include tablet {
+      font-size: 3.5vw;
+    }
+
+    @include desktop {
+      top: 0;
+      font-size: 1em;
+      width: 200px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding: 0px;
+      -moz-transform: translatex(5%) translatey(65%);
+      -webkit-transform: translatex(5%) translatey(65%);
+    }
+
+    tr {
+      display: flex;
+      justify-content: space-around;
+
+      ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0 2vw;
+
+        @include tablet {
+          margin: 0 2vw;
+        }
+
+        @include desktop {
+          margin: 0 5px;
+        }
+
+        li {
+          line-height: 4vh;
+          position: relative;
+
+          @include desktop {
+            line-height: 25px;
+          }
+
+          .listnames {
+            text-align: center;
+            align-items: center;
+          }
+
+          .check[type="checkbox"] {
+            @include tablet {
+              position: relative;
+              top: 0;
+              left: -3vw;
+            }
+
+            &::before {
+              position: absolute;
+              top: 0;
+              left: 0;
+              position: relative;
+              display: block;
+              width: 2.5vw;
+              height: 2.5vw;
+              border: 2px solid #cd853f;
+              content: "";
+              background: #cd853f;
+              display: blcok;
+
+              @include tablet {
+                left: 0;
+                width: 1.2vw;
+                height: 1.2vw;
+              }
+
+              @include desktop {
+                width: 11px;
+                height: 11px;
+              }
+            }
+
+            &::after {
+              position: relative;
+              top: -4vw;
+              left: -3vw;
+              position: relative;
+              background-color: transparent;
+              background-image: url("../images/coff.png");
+              background-size: cover;
+              display: block;
+              width: 4.5vw;
+              height: 4.5vw;
+              border-radius: 50%;
+              content: "";
+              cursor: pointer;
+
+              @include tablet {
+                top: -3.5vw;
+                left: 0vw;
+                width: 3.5vw;
+                height: 3.5vw;
+              }
+
+              @include desktop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                position: relative;
+                background-color: transparent;
+                background-image: url("../images/coff.png");
+                background-size: cover;
+                top: -110%;
+                left: -50%;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            &:checked::after {
+              background-size: cover;
+              width: 4.5vw;
+              height: 4.5vw;
+              background-color: #fff3b2;
+              background-repeat: no-repeat;
+              background-position: center;
+
+              @include tablet {
+                width: 3.5vw;
+                height: 3.5vw;
+              }
+
+              @include desktop {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .add {
+    position: absolute;
+    top: 75%;
+    left: 2%;
+    text-align: center;
+    border: 3px solid black;
+    margin: 3%;
+    border-radius: 9px;
+    cursor: pointer;
+
+    @include tablet {
+      font-size: 2.8vw;
+    }
+  }
+
+  .addimg {
+    position: absolute;
+    top: 78%;
+    left: 25%;
+    height: 13px;
+    width: 23px;
+
+    @include tablet {
+      top: 77%;
+      left: 22%;
+      width: 5vw;
+      height: 3vw;
+    }
+  }
+
+  input,
+  button {
+    background: brown;
+    font-weight: 500;
+    border-radius: 15%;
+
+    @include tablet {
+      font-size: 3vw;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: black;
+      color: brown;
+      font-weight: 500;
+    }
+
+    &:disabled {
+      color: black;
+      opacity: 0.3;
+    }
+  }
+
+  .buydiv {
+    position: absolute;
+    top: 85%;
+    left: 2%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .buy {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 3px solid black;
+    height: 10%;
+    width: 35%;
+    margin: 3%;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @include tablet {
+      border-radius: 2.5vw;
+    }
+  }
+
+  .tokens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    height: 35px;
+    width: 70px;
+  }
+
+  .carddiv {
+    position: absolute;
+    right: 2%;
+    top: 85%;
+    height: 12%;
+    width: 40%;
+
+    .card {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      height: 20px;
+      width: 70px;
+      margin: 5%;
+      border: 3px solid;
+      border-radius: 10px;
+      font-size: 3.8vw;
+
+      @include tablet {
+        height: 5vw;
+        width: 12vw;
+        font-size: 2.7vw;
+        border-radius: 2.5vw;
+      }
+
+      @include desktop {
+        font-size: 13px;
+      }
+    }
+
+    .cardtext {
+      position: absolute;
+      right: 2%;
+      top: -12%;
+
+      @include tablet {
+        right: 2%;
+        top: -12%;
+        font-size: 2.7vw;
+      }
+
+      @include desktop {
+      }
+    }
+
+    .cardamount {
+      position: absolute;
+      right: 2%;
+      bottom: -10%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .descr {
+    position: absolute;
+    text-align: center;
+    bottom: -15%;
+    font-weight: 600;
+    font-size: 5vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    width: 85vw;
+
+    @include desktop {
+      font-size: 1.7rem;
+      bottom: -20%;
+    }
+  }
+
+  .cost,
+  .budget,
+  .card {
+    background: #fff3b2;
+  }
+}
