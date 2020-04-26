@@ -25,6 +25,7 @@ body::after {
 
 .all {
   z-index: 2;
+  display: flex;
 }
 
 .backgr {
@@ -38,16 +39,26 @@ body::after {
 }
 
 .coinsdiv {
-  position: relative;
-  top: 5%;
+  position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -70vw);
   position: absolute;
   width: 100%;
   justify-content: center;
   align-items: center;
+  align-self: center;
   text-align: center;
   z-index: 2;
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  .coinsdiv {
+    transform: translate(-50%, -50vw);
+  }
+}
+@media (min-width: 1025px) {
+  .coinsdiv {
+    transform: translate(-50%, -250px);
+  }
 }
 
 #cf {
@@ -171,7 +182,7 @@ body::after {
     height: 87vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine {
     height: 25rem;
     width: 14rem;
@@ -201,7 +212,7 @@ body::after {
     font-size: 2.5vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine .cost {
     height: 35px;
     width: 60px;
@@ -274,7 +285,7 @@ body::after {
     font-size: 2.5vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine .budget {
     height: 35px;
     width: 60px;
@@ -291,7 +302,7 @@ body::after {
     right: -7%;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine .reset {
     border: 3px solid black;
   }
@@ -355,7 +366,7 @@ body::after {
     font-size: 3.5vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine table {
     top: 0;
     font-size: 1em;
@@ -382,16 +393,16 @@ body::after {
     margin: 0 2vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine table tr ul {
-    margin: 0 5px;
+    margin: 0 4px;
   }
 }
 .machine table tr ul li {
   line-height: 4vh;
   position: relative;
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine table tr ul li {
     line-height: 25px;
   }
@@ -400,15 +411,27 @@ body::after {
   text-align: center;
   align-items: center;
 }
+.machine table tr ul li span {
+  margin-left: 0.5vw;
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  .machine table tr ul li span {
+    margin-left: 0;
+  }
+}
+@media (min-width: 1025px) {
+  .machine table tr ul li span {
+    margin-left: 0;
+  }
+}
 @media (min-width: 767px) and (max-width: 1024px) {
   .machine table tr ul li .check[type=checkbox] {
     position: relative;
     top: 0;
-    left: -3vw;
+    left: -2vw;
   }
 }
 .machine table tr ul li .check[type=checkbox]::before {
-  position: absolute;
   top: 0;
   left: 0;
   position: relative;
@@ -427,7 +450,7 @@ body::after {
     height: 1.2vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine table tr ul li .check[type=checkbox]::before {
     width: 11px;
     height: 11px;
@@ -450,13 +473,13 @@ body::after {
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   .machine table tr ul li .check[type=checkbox]::after {
-    top: -3.5vw;
+    top: -3vw;
     left: 0vw;
     width: 3.5vw;
     height: 3.5vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine table tr ul li .check[type=checkbox]::after {
     position: absolute;
     top: 0;
@@ -465,7 +488,7 @@ body::after {
     background-color: transparent;
     background-image: url("../images/coff.png");
     background-size: cover;
-    top: -110%;
+    top: -105%;
     left: -50%;
     width: 100%;
     height: 100%;
@@ -485,7 +508,7 @@ body::after {
     height: 3.5vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine table tr ul li .check[type=checkbox]:checked::after {
     width: 100%;
     height: 100%;
@@ -494,8 +517,10 @@ body::after {
 }
 .machine .add {
   position: absolute;
-  top: 75%;
+  top: 90vw;
   left: 2%;
+  height: 4vw;
+  font-size: 3.5vw;
   text-align: center;
   border: 3px solid black;
   margin: 3%;
@@ -504,15 +529,23 @@ body::after {
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   .machine .add {
+    top: 65vw;
     font-size: 2.8vw;
+  }
+}
+@media (min-width: 1025px) {
+  .machine .add {
+    font-size: 75%;
+    top: 75%;
+    height: 19px;
   }
 }
 .machine .addimg {
   position: absolute;
-  top: 78%;
+  top: 93vw;
   left: 25%;
-  height: 13px;
-  width: 23px;
+  height: 3.5vw;
+  width: 6vw;
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   .machine .addimg {
@@ -520,6 +553,14 @@ body::after {
     left: 22%;
     width: 5vw;
     height: 3vw;
+  }
+}
+@media (min-width: 1025px) {
+  .machine .addimg {
+    top: 78%;
+    left: 25%;
+    height: 13px;
+    width: 23px;
   }
 }
 .machine input,
@@ -611,7 +652,7 @@ body::after {
     border-radius: 2.5vw;
   }
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine .carddiv .card {
     font-size: 13px;
   }
@@ -620,20 +661,40 @@ body::after {
   position: absolute;
   right: 2%;
   top: -12%;
+  font-size: 4.5vw;
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   .machine .carddiv .cardtext {
     right: 2%;
     top: -12%;
-    font-size: 2.7vw;
+    font-size: 3vw;
+  }
+}
+@media (min-width: 1025px) {
+  .machine .carddiv .cardtext {
+    font-size: 100%;
   }
 }
 .machine .carddiv .cardamount {
   position: absolute;
   right: 2%;
-  bottom: -10%;
+  bottom: -7%;
   display: flex;
   justify-content: center;
+  height: 6vw;
+  width: 18.5vw;
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  .machine .carddiv .cardamount {
+    width: 13vw;
+    height: 4vw;
+  }
+}
+@media (min-width: 1025px) {
+  .machine .carddiv .cardamount {
+    height: 20px;
+    width: 68px;
+  }
 }
 .machine .descr {
   position: absolute;
@@ -646,7 +707,7 @@ body::after {
   -moz-transform: translateX(-50%);
   width: 85vw;
 }
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1025px) {
   .machine .descr {
     font-size: 1.7rem;
     bottom: -20%;
