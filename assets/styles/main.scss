@@ -444,8 +444,8 @@ body::after {
               left: 0;
               position: relative;
               display: block;
-              width: 3vw;
-              height: 3vw;
+              width: 4vw;
+              height: 4vw;
               border: 2px solid #cd853f;
               content: "";
               background: #cd853f;
@@ -465,7 +465,7 @@ body::after {
 
             &::after {
               position: relative;
-              top: -4.5vw;
+              top: -5.5vw;
               left: -3vw;
               position: relative;
               background-color: transparent;
