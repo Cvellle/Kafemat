@@ -1,8 +1,6 @@
 @import "./base/mixins.scss";
 
 body {
-  background-image: url("../images/coffee.jpg");
-  background-size: cover;
   align-items: center;
   display: -webkit-flex;
   justify-content: space-around;
@@ -15,13 +13,24 @@ body {
   box-sizing: inherit;
 }
 
-body::after {
+.backgr {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/coffee.jpg");
+  background-size: cover;
+  z-index: 1;
+}
+
+.backgr::after {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(178, 70, 16, 0.781);
-  z-index: 1;
+  z-index: 2;
 }
 
 .all {
@@ -31,8 +40,9 @@ body::after {
 
 .coinsdiv {
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -70vw);
+  transform: translate(-50%, -80vw);
   position: absolute;
   width: 100%;
   justify-content: center;
@@ -42,11 +52,11 @@ body::after {
   z-index: 2;
 
   @include tablet {
-    transform: translate(-50%, -50vw);
+    transform: translate(-50%, -55vw);
   }
 
   @include desktop {
-    transform: translate(-50%, -250px);
+    transform: translate(-50%, -270px);
   }
 }
 
@@ -409,7 +419,6 @@ body::after {
         }
 
         li {
-          line-height: 4vh;
           position: relative;
 
           @include desktop {
@@ -423,100 +432,86 @@ body::after {
 
           span {
             margin-left: 0.5vw;
+            display: inline-flex;
+            align-items: center;
+            height: 8vw;
 
             @include tablet {
+              height: 8vw * 0.7;
               margin-left: 0;
             }
             @include desktop {
+              height: 4px;
               margin-left: 0;
             }
           }
 
           .check[type="checkbox"] {
+            position: relative;
+            top: 0;
+            left: 0vw;
+            height: 4vw;
+            width: 4vw;
+
             @include tablet {
-              position: relative;
-              top: 0;
-              left: -2vw;
+              width: 4vw * 0.7;
+              height: 4vw * 0.7;
+            }
+
+            @include desktop {
+              width: 10px;
+              height: 10px;
             }
 
             &::before {
+              position: absolute;
               top: 0;
               left: 0;
-              position: relative;
-              display: block;
-              width: 4vw;
-              height: 4vw;
-              border: 2px solid #cd853f;
               content: "";
+              display: block;
+              height: 100%;
+              width: 100%;
               background: #cd853f;
               display: blcok;
-
-              @include tablet {
-                left: 0;
-                width: 1.2vw;
-                height: 1.2vw;
-              }
-
-              @include desktop {
-                width: 11px;
-                height: 11px;
-              }
             }
 
             &::after {
-              position: relative;
-              top: -5.5vw;
-              left: -3vw;
-              position: relative;
+              position: absolute;
+              top: 0.5vw;
+              left: -2vw;
               background-color: transparent;
               background-image: url("../images/coff.png");
               background-size: cover;
               display: block;
-              width: 4.5vw;
-              height: 4.5vw;
+              height: 100%;
+              width: 100%;
               border-radius: 50%;
               content: "";
               cursor: pointer;
 
               @include tablet {
-                top: -3vw;
-                left: 0vw;
-                width: 3.5vw;
-                height: 3.5vw;
+                top: 0.5vw * 0.7;
+                left: -2vw * 0.9;
               }
 
               @include desktop {
-                position: absolute;
-                top: 0;
-                left: 0;
-                position: relative;
-                background-color: transparent;
-                background-image: url("../images/coff.png");
-                background-size: cover;
-                top: -105%;
-                left: -50%;
-                width: 100%;
-                height: 100%;
+                top: -2px;
+                left: -10px;
+                height: 140%;
+                width: 140%;
               }
             }
 
             &:checked::after {
-              background-size: cover;
-              width: 4.5vw;
-              height: 4.5vw;
+              height: 100%;
+              width: 100%;
               background-color: #fff3b2;
-              background-repeat: no-repeat;
-              background-position: center;
-
-              @include tablet {
-                width: 3.5vw;
-                height: 3.5vw;
-              }
 
               @include desktop {
-                width: 100%;
-                height: 100%;
-                background-size: cover;
+                top: -2px;
+                left: -10px;
+                height: 140%;
+                width: 140%;
               }
             }
           }
@@ -725,14 +720,4 @@ body::after {
   .card {
     background: #fff3b2;
   }
-}
-
-.backgr {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100vw;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.15;
 }
