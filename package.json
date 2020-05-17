@@ -1,10 +1,9 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "Kafemat",
   "version": "1.0.0",
-  "description": "A webpack 4 boilerplate",
-  "author": "Gustaf Gunér (https://github.com/gustafguner)",
+  "description": "Webpack 4, Sass, JS",
+  "author": "Cvellle",
   "main": "src/index.js",
-  "license": "MIT",
   "keywords": [
     "webpack",
     "webpack4",
@@ -14,12 +13,11 @@
     "webpack-dev-server"
   ],
   "bugs": {
-    "url": "https://github.com/gustafguner/webpack-boilerplate/commits/master",
-    "email": "gustaf@guner.se"
+    "url": "https://github.com/cvellle/Kafemat/commits/master"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gustafguner/webpack-boilerplate.git"
+    "url": "https://github.com/cvellle/Kafemat.git"
   },
   "scripts": {
     "dev": "webpack --mode=development --config ./webpack.config.dev.js && webpack-dev-server --mode=development --config ./webpack.config.dev.js",
